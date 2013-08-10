@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="peladafc"
-  id="myeclipse.1376141018213"
-  context-root="/pfc"
+  name="pfc"
+  id="myeclipse.1205626602075"
+  context-root="/"
   j2ee-spec="5.0"
-  archive="peladafc.war">
+  archive="pfc.war">
   <attributes>
-    <attribute name="webrootdir" value="WebRoot" />
+    <attribute name="webrootdir" value="/WebRoot" />
   </attributes>
 </project-module>
 
