@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/inicio.do" location="2450,4250" dimension="268,96" />
+  <StrutsActivity path="/logoff.do" location="3050,2250" dimension="265,96" />
+  <StrutsActivity path="/login.do" location="3050,2050" dimension="265,96" />
+  <StrutsActivity path="/abrirSociosInicio.do" location="3050,2850" dimension="264,96" />
+  <StrutsActivity path="/abrirSociosShowSocio.do" location="3050,3050" dimension="264,96" />
+  <StrutsActivity path="/abrirSocioAniversariantes.do" location="3050,3450" dimension="264,96" />
+  <StrutsActivity path="/abrirSocioImagemSocio.do" location="50,3650" dimension="264,96" />
+  <StrutsActivity path="/abrirCadSocio.do" location="1250,3650" dimension="264,96" />
+  <StrutsActivity path="/salvarCadSocio.do" location="1850,3650" dimension="264,96" />
+  <StrutsActivity path="/excluirCadSocio.do" location="650,150" dimension="264,96" />
+  <StrutsActivity path="/abrirConJogosQuadrimestre.do" location="3050,50" dimension="272,96" />
+  <StrutsActivity path="/abrirConsultaJogos.do" location="2450,3650" dimension="272,96" />
+  <StrutsActivity path="/abrirConJogosAno.do" location="3050,3650" dimension="272,96" />
+  <StrutsActivity path="/abrirConPartida.do" location="50,3850" dimension="272,96" />
+  <StrutsActivity path="/abrirConJogosShow.do" location="650,3850" dimension="272,96" />
+  <StrutsActivity path="/abrirCadPartida.do" location="1250,3850" dimension="272,96" />
+  <StrutsActivity path="/editarCadPartida.do" location="1850,3850" dimension="272,96" />
+  <StrutsActivity path="/salvarCadPartida.do" location="2450,3850" dimension="272,96" />
+  <StrutsActivity path="/excluirCadPartida.do" location="3050,3850" dimension="272,96" />
+  <StrutsActivity path="/encerrarCadPartida.do" location="50,4050" dimension="272,96" />
+  <StrutsActivity path="/enviarEmailEncerramentoPartida.do" location="650,4050" dimension="272,96" />
+  <StrutsActivity path="/enviarEmailAtrasadosPartida.do" location="3050,1450" dimension="272,96" />
+  <StrutsActivity path="/reabrirCadPartida.do" location="1250,4050" dimension="272,96" />
+  <StrutsActivity path="/encerrarCadTodasPartida.do" location="1850,4050" dimension="272,96" />
+  <StrutsActivity path="/abrirCadSocioPartida.do" location="2450,4050" dimension="301,96" />
+  <StrutsActivity path="/salvarCadSocioPartida.do" location="3050,4050" dimension="301,96" />
+  <StrutsActivity path="/abrirRankingQuadrimestre.do" location="50,4250" dimension="303,96" />
+  <StrutsActivity path="/abrirConRanking.do" location="650,4250" dimension="303,96" />
+  <StrutsActivity path="/abrirConRankingAno.do" location="1250,4250" dimension="303,96" />
+  <StrutsActivity path="/abrirRankingConsulta.do" location="1850,4250" dimension="303,96" />
+  <StrutsActivity path="/abrirConNoticias.do" location="2150,1050" dimension="273,96" />
+  <StrutsActivity path="/consultarNoticias.do" location="50,1250" dimension="273,96" />
+  <StrutsActivity path="/visualizarNoticias.do" location="650,1250" dimension="273,96" />
+  <StrutsActivity path="/abrirCadNoticia.do" location="1250,1250" dimension="273,96" />
+  <StrutsActivity path="/editarCadNoticia.do" location="1850,1250" dimension="273,96" />
+  <StrutsActivity path="/salvarCadNoticia.do" location="2450,1250" dimension="273,96" />
+  <StrutsActivity path="/excluirCadNoticia.do" location="350,3250" dimension="273,96" />
+  <StrutsActivity path="/abrirConEventos.do" location="50,1450" dimension="273,96" />
+  <StrutsActivity path="/consultarEventos.do" location="650,1450" dimension="273,96" />
+  <StrutsActivity path="/abrirCadEvento.do" location="1250,1450" dimension="273,96" />
+  <StrutsActivity path="/editarCadEvento.do" location="1850,1450" dimension="273,96" />
+  <StrutsActivity path="/salvarCadEvento.do" location="2450,1450" dimension="273,96" />
+  <StrutsActivity path="/excluirCadEvento.do" location="950,3250" dimension="273,96" />
+  <StrutsActivity path="/visualizarEventos.do" location="50,1650" dimension="273,96" />
+  <StrutsActivity path="/abrirConClubeInicio.do" location="650,1650" dimension="307,96" />
+  <StrutsActivity path="/abrirConClubeHistoria.do" location="1250,1650" dimension="307,96" />
+  <StrutsActivity path="/abrirConClubeEstatuto.do" location="1850,1650" dimension="307,96" />
+  <StrutsActivity path="/abrirConClubeDiretoria.do" location="2450,1650" dimension="307,96" />
+  <StrutsActivity path="/abrirConClubeCamisas.do" location="2750,2450" dimension="307,96" />
+  <StrutsActivity path="/salvarCadConfiguracao.do" location="1850,450" dimension="307,96" />
+  <StrutsActivity path="/editarDescritivoSite.do" location="650,1850" dimension="307,96" />
+  <StrutsActivity path="/salvarDescritivoSite.do" location="1250,1850" dimension="307,96" />
+  <StrutsActivity path="/editarCamisas.do" location="50,3450" dimension="307,96" />
+  <StrutsActivity path="/salvarCamisas.do" location="650,3450" dimension="307,96" />
+  <StrutsActivity path="/abrirConFotos.do" location="1850,1850" dimension="271,96" />
+  <StrutsActivity path="/visualizarFotos.do" location="2450,1850" dimension="271,96" />
+  <StrutsActivity path="/abrirCadFotos.do" location="50,2050" dimension="271,96" />
+  <StrutsActivity path="/editarCadFotos.do" location="650,2050" dimension="271,96" />
+  <StrutsActivity path="/salvarCadFotos.do" location="1250,2050" dimension="271,96" />
+  <StrutsActivity path="/salvarFotos.do" location="2750,3250" dimension="271,96" />
+  <StrutsActivity path="/excluirFotoselecionada.do" location="1850,2050" dimension="271,96" />
+  <StrutsActivity path="/abrirConQuadrimestre.do" location="2450,2050" dimension="307,96" />
+  <StrutsActivity path="/abrirCadQuadrimestre.do" location="50,2250" dimension="307,96" />
+  <StrutsActivity path="/editarCadQuadrimestre.do" location="650,2250" dimension="307,96" />
+  <StrutsActivity path="/salvarCadQuadrimestre.do" location="1250,2250" dimension="307,96" />
+  <StrutsActivity path="/abrirConGaleriacampeoes.do" location="1850,2250" dimension="307,96" />
+  <StrutsActivity path="/abrirConMaiorescampeoes.do" location="2750,2650" dimension="307,96" />
+  <StrutsActivity path="/abrirCadArquivoGaleriaAnterior.do" location="2450,2250" dimension="271,96" />
+  <StrutsActivity path="/salvarCadArquivoGaleriaAnterior.do" location="50,2450" dimension="271,96" />
+  <StrutsActivity path="/abrirConRelatorioAtrasos.do" location="2150,3450" dimension="282,96" />
+  <StrutsActivity path="/consultarRelatorioAtrasos.do" location="3050,650" dimension="282,96" />
+  <StrutsActivity path="/imprimirRelatorioAtrasos.do" location="3050,1250" dimension="282,96" />
+  <StrutsActivity path="error;6" location="1250,3450" dimension="101,81" />
+  <StrutsActivity path="erro;6" location="650,2450" dimension="113,81" />
+  <StrutsActivity path="semautorizacao;6" location="2750,2850" dimension="155,81" />
+  <StrutsActivity path="mensagem;6" location="950,2450" dimension="150,81" />
+  <StrutsActivity path="ranking;6" location="1250,2450" dimension="153,81" />
+  <StrutsActivity path="home;6" location="1550,2450" dimension="127,81" />
+  <StrutsActivity path="home.inicio" location="1850,2450" dimension="93,51" />
+  <StrutsActivity path="/jsp/home/pfcHomeInicio2.jsp" location="950,750" dimension="194,51" />
+  <StrutsActivity path="adm.inicio" location="2150,2450" dimension="86,51" />
+  <StrutsActivity path="socios.inicio" location="2450,2450" dimension="95,51" />
+  <StrutsActivity path="socios.socio" location="50,2650" dimension="94,51" />
+  <StrutsActivity path="socios.aniversariantes" location="350,2650" dimension="144,51" />
+  <StrutsActivity path="jogos.listJogos" location="650,2650" dimension="107,51" />
+  <StrutsActivity path="jogos.consulta" location="950,2650" dimension="107,51" />
+  <StrutsActivity path="jogos.jogo" location="1250,2650" dimension="86,51" />
+  <StrutsActivity path="jogos.cadastra" location="1550,2650" dimension="106,51" />
+  <StrutsActivity path="jogos.cadastrasocio" location="1850,2650" dimension="134,51" />
+  <StrutsActivity path="ranking.quadrimestre" location="2150,2650" dimension="143,51" />
+  <StrutsActivity path="ranking.listRanking" location="2450,2650" dimension="131,51" />
+  <StrutsActivity path="ranking.consulta" location="50,2850" dimension="118,51" />
+  <StrutsActivity path="noticias.list" location="350,2850" dimension="89,51" />
+  <StrutsActivity path="noticias.noticia" location="650,2850" dimension="110,51" />
+  <StrutsActivity path="noticias.cadastro" location="950,2850" dimension="119,51" />
+  <StrutsActivity path="eventos.inicio" location="1250,2850" dimension="103,51" />
+  <StrutsActivity path="eventos.list" location="1550,2850" dimension="89,51" />
+  <StrutsActivity path="eventos.cadastro" location="1850,2850" dimension="119,51" />
+  <StrutsActivity path="eventos.evento" location="2150,2850" dimension="110,51" />
+  <StrutsActivity path="oclube.inicio" location="2450,2850" dimension="98,51" />
+  <StrutsActivity path="adm.descritivosite" location="50,3050" dimension="126,51" />
+  <StrutsActivity path="adm.camisas" location="2150,3250" dimension="99,51" />
+  <StrutsActivity path="fotos.inicio" location="350,3050" dimension="89,51" />
+  <StrutsActivity path="fotos.galeria" location="650,3050" dimension="95,51" />
+  <StrutsActivity path="fotos.cadastro" location="950,3050" dimension="105,51" />
+  <StrutsActivity path="quadrimestre.consulta" location="1250,3050" dimension="148,51" />
+  <StrutsActivity path="quadrimestre.cadastro" location="1550,3050" dimension="148,51" />
+  <StrutsActivity path="galerias.consulta" location="1850,3050" dimension="118,51" />
+  <StrutsActivity path="maiorescampeoes.consulta" location="1550,3250" dimension="174,51" />
+  <StrutsActivity path="adm.campeoesanterior" location="2150,3050" dimension="152,51" />
+  <StrutsActivity path="adm.relatrasos" location="3050,1650" dimension="107,51" />
+  <StrutsActivity path="/pfcError.jsp" location="1850,3450" dimension="95,51" />
+  <StrutsActivity path="/adm/erro.jsp" location="2450,3050" dimension="103,51" />
+  <StrutsActivity path="semautorizacao.inicio" location="2450,3250" dimension="145,51" />
+  <StrutsActivity path="/adm/mensagem.do" location="50,3250" dimension="150,81" />
+  <StrutsActivity path="/home/inicio" location="50,50" dimension="268,96" />
+  <StrutsActivity path="/ranking/quadrimestre" location="2150,850" dimension="303,96" />
+  <StrutsActivity path="/home/inicio2.jsp" location="1850,3250" dimension="124,51" />
+  <StrutsActivity path="/jogos/inicio" location="650,850" dimension="108,66" />
+  <StrutsActivity path="adm.relatrazos" location="950,3650" dimension="107,51" />
+  <StrutsActivity path="" location="2750,3050" dimension="30,51" />
+  <StrutsActivity path="/pfcErro.jsp" location="1550,3450" dimension="91,51" />
+  <StrutsActivity path="rel.consulta" location="2750,3450" dimension="91,51" />
+  <StrutsActivity path="relatorio" location="650,3650" dimension="74,51" />
+  <StrutsActivity path="/jsp/home/inicio2.jsp" location="3050,4250" dimension="144,51" />
+  <StrutsActivity path="/abrirConJogosQuadrimestre" location="50,1850" dimension="183,51" />
+  <StrutsTransition id="/editarDescritivoSite.do,consultar,adm.descritivosite,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,1898" />
+      <AbsolutePoint location="539,1898" />
+      <AbsolutePoint location="539,2916" />
+      <AbsolutePoint location="113,2916" />
+      <AbsolutePoint location="113,3050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/excluirCadPartida.do,iniciojogos,/abrirConJogosQuadrimestre.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3186,3898" />
+      <AbsolutePoint location="3186,98" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirSociosShowSocio.do,cadastrar,socios.socio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3050,3116" />
+      <AbsolutePoint location="275,3116" />
+      <AbsolutePoint location="275,2675" />
+      <AbsolutePoint location="144,2675" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="mensagem;6,null,/adm/mensagem.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1086,2531" />
+      <AbsolutePoint location="1086,2843" />
+      <AbsolutePoint location="183,2843" />
+      <AbsolutePoint location="183,3250" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/visualizarEventos.do,consultar,eventos.evento,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="186,1746" />
+      <AbsolutePoint location="186,1795" />
+      <AbsolutePoint location="2439,1795" />
+      <AbsolutePoint location="2439,2875" />
+      <AbsolutePoint location="2260,2875" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="semautorizacao;6,null,semautorizacao.inicio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2750,2916" />
+      <AbsolutePoint location="2640,2916" />
+      <AbsolutePoint location="2640,3275" />
+      <AbsolutePoint location="2595,3275" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConMaiorescampeoes.do,consultar,maiorescampeoes.consulta,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3028,2746" />
+      <AbsolutePoint location="3028,3443" />
+      <AbsolutePoint location="1634,3443" />
+      <AbsolutePoint location="1634,3301" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConClubeCamisas.do,consultar,oclube.inicio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2750,2486" />
+      <AbsolutePoint location="2640,2486" />
+      <AbsolutePoint location="2640,2875" />
+      <AbsolutePoint location="2548,2875" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConEventos.do,consultar,eventos.inicio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="186,1546" />
+      <AbsolutePoint location="186,1591" />
+      <AbsolutePoint location="1219,1591" />
+      <AbsolutePoint location="1219,2875" />
+      <AbsolutePoint location="1250,2875" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirCadQuadrimestre.do,cadastrar,quadrimestre.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="328,2346" />
+      <AbsolutePoint location="328,3043" />
+      <AbsolutePoint location="1624,3043" />
+      <AbsolutePoint location="1624,3050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editarCadEvento.do,cadastrar,eventos.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2123,1498" />
+      <AbsolutePoint location="2253,1498" />
+      <AbsolutePoint location="2253,2361" />
+      <AbsolutePoint location="3102,2361" />
+      <AbsolutePoint location="3102,2791" />
+      <AbsolutePoint location="1909,2791" />
+      <AbsolutePoint location="1909,2850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salvarCadSocio.do,cadastrar,socios.socio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1999,3650" />
+      <AbsolutePoint location="1999,2821" />
+      <AbsolutePoint location="97,2821" />
+      <AbsolutePoint location="97,2701" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/consultarNoticias.do,consultar,noticias.list,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="323,1298" />
+      <AbsolutePoint location="509,1298" />
+      <AbsolutePoint location="509,2875" />
+      <AbsolutePoint location="439,2875" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/reabrirCadPartida.do,cadastrar,jogos.cadastra,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1522,4098" />
+      <AbsolutePoint location="1529,4098" />
+      <AbsolutePoint location="1529,2675" />
+      <AbsolutePoint location="1550,2675" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConNoticias.do,consultar,noticias.list,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2407,1146" />
+      <AbsolutePoint location="2407,3021" />
+      <AbsolutePoint location="394,3021" />
+      <AbsolutePoint location="394,2901" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConClubeDiretoria.do,consultar,oclube.inicio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2757,1708" />
+      <AbsolutePoint location="3329,1708" />
+      <AbsolutePoint location="3329,2827" />
+      <AbsolutePoint location="2513,2827" />
+      <AbsolutePoint location="2513,2850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salvarCadConfiguracao.do,consultar,oclube.inicio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="0,0" />
+      <AbsolutePoint location="2499,2875" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConGaleriacampeoes.do,consultar,galerias.consulta,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2111,2346" />
+      <AbsolutePoint location="2111,3075" />
+      <AbsolutePoint location="1968,3075" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirCadSocio.do,cadastrar,socios.socio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1418,3650" />
+      <AbsolutePoint location="1418,2791" />
+      <AbsolutePoint location="127,2791" />
+      <AbsolutePoint location="127,2701" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConRankingAno.do,consultar,ranking.quadrimestre,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1553,4298" />
+      <AbsolutePoint location="1686,4298" />
+      <AbsolutePoint location="1686,3316" />
+      <AbsolutePoint location="2377,3316" />
+      <AbsolutePoint location="2377,2675" />
+      <AbsolutePoint location="2293,2675" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/imprimirRelatorioAtrasos.do,cadastrar,adm.relatrasos,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3332,1298" />
+      <AbsolutePoint location="3366,1298" />
+      <AbsolutePoint location="3366,1653" />
+      <AbsolutePoint location="3157,1653" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/encerrarCadPartida.do,cadastrar,jogos.cadastra,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,4098" />
+      <AbsolutePoint location="35,4098" />
+      <AbsolutePoint location="35,2561" />
+      <AbsolutePoint location="1573,2561" />
+      <AbsolutePoint location="1573,2650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/logoff.do,inicio,/inicio.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3182,2298" />
+      <AbsolutePoint location="2584,4298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirCadFotos.do,cadastrar,fotos.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="321,2098" />
+      <AbsolutePoint location="432,2098" />
+      <AbsolutePoint location="432,2391" />
+      <AbsolutePoint location="898,2391" />
+      <AbsolutePoint location="898,3075" />
+      <AbsolutePoint location="950,3075" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/excluirCadSocio.do,cadastrar,socios.socio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,198" />
+      <AbsolutePoint location="-25,198" />
+      <AbsolutePoint location="-25,2675" />
+      <AbsolutePoint location="50,2675" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editarCadFotos.do,cadastrar,fotos.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="921,2098" />
+      <AbsolutePoint location="972,2098" />
+      <AbsolutePoint location="972,2361" />
+      <AbsolutePoint location="803,2361" />
+      <AbsolutePoint location="803,2961" />
+      <AbsolutePoint location="1009,2961" />
+      <AbsolutePoint location="1009,3050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/excluirCadNoticia.do,cadastrar,noticias.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="623,3298" />
+      <AbsolutePoint location="868,3298" />
+      <AbsolutePoint location="868,2875" />
+      <AbsolutePoint location="950,2875" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,inicio,adm.inicio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3182,2146" />
+      <AbsolutePoint location="3182,2191" />
+      <AbsolutePoint location="2193,2191" />
+      <AbsolutePoint location="2193,2450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/excluirCadEvento.do,cadastrar,eventos.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1086,3250" />
+      <AbsolutePoint location="1086,2938" />
+      <AbsolutePoint location="1909,2938" />
+      <AbsolutePoint location="1909,2901" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConRanking.do,consultar,ranking.listRanking,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="953,4298" />
+      <AbsolutePoint location="1132,4298" />
+      <AbsolutePoint location="1132,3561" />
+      <AbsolutePoint location="2700,3561" />
+      <AbsolutePoint location="2700,2675" />
+      <AbsolutePoint location="2581,2675" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/consultarEventos.do,consultar,eventos.list,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="786,1546" />
+      <AbsolutePoint location="786,1621" />
+      <AbsolutePoint location="1713,1621" />
+      <AbsolutePoint location="1713,2875" />
+      <AbsolutePoint location="1639,2875" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirSocioAniversariantes.do,consultar,socios.aniversariantes,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3182,3450" />
+      <AbsolutePoint location="3182,3191" />
+      <AbsolutePoint location="454,3191" />
+      <AbsolutePoint location="454,2701" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salvarCamisas.do,cadastrar,adm.camisas,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="803,3450" />
+      <AbsolutePoint location="803,3421" />
+      <AbsolutePoint location="2229,3421" />
+      <AbsolutePoint location="2229,3301" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConJogosShow.do,showJogo,jogos.jogo,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="786,3850" />
+      <AbsolutePoint location="786,3591" />
+      <AbsolutePoint location="1478,3591" />
+      <AbsolutePoint location="1478,2675" />
+      <AbsolutePoint location="1336,2675" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/excluirCadPartida.do,cadastrar,jogos.cadastra,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3322,3898" />
+      <AbsolutePoint location="3396,3898" />
+      <AbsolutePoint location="3396,2561" />
+      <AbsolutePoint location="1603,2561" />
+      <AbsolutePoint location="1603,2650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/visualizarNoticias.do,consultar,noticias.noticia,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="650,1298" />
+      <AbsolutePoint location="599,1298" />
+      <AbsolutePoint location="599,2875" />
+      <AbsolutePoint location="650,2875" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editarCadNoticia.do,cadastrar,noticias.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2123,1298" />
+      <AbsolutePoint location="2317,1298" />
+      <AbsolutePoint location="2317,2916" />
+      <AbsolutePoint location="1009,2916" />
+      <AbsolutePoint location="1009,2901" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="ranking;6,null,ranking.quadrimestre,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1326,2450" />
+      <AbsolutePoint location="1326,2443" />
+      <AbsolutePoint location="2245,2443" />
+      <AbsolutePoint location="2245,2650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salvarFotos.do,cadastrar,fotos.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2885,3250" />
+      <AbsolutePoint location="2885,3138" />
+      <AbsolutePoint location="1024,3138" />
+      <AbsolutePoint location="1024,3101" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salvarCadSocioPartida.do,cadastrar,jogos.cadastrasocio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3050,4098" />
+      <AbsolutePoint location="2976,4098" />
+      <AbsolutePoint location="2976,3421" />
+      <AbsolutePoint location="2670,3421" />
+      <AbsolutePoint location="2670,2516" />
+      <AbsolutePoint location="1917,2516" />
+      <AbsolutePoint location="1917,2650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="error;6,null,/pfcError.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1351,3516" />
+      <AbsolutePoint location="1897,3516" />
+      <AbsolutePoint location="1897,3501" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/inicio.do,home2,/jsp/home/pfcHomeInicio2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2718,4316" />
+      <AbsolutePoint location="3426,4316" />
+      <AbsolutePoint location="3426,775" />
+      <AbsolutePoint location="1144,775" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirCadPartida.do,iniciojogos,/abrirConJogosQuadrimestre,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1386,3850" />
+      <AbsolutePoint location="1386,3821" />
+      <AbsolutePoint location="492,3821" />
+      <AbsolutePoint location="492,3397" />
+      <AbsolutePoint location="245,3397" />
+      <AbsolutePoint location="245,2761" />
+      <AbsolutePoint location="-55,2761" />
+      <AbsolutePoint location="-55,1875" />
+      <AbsolutePoint location="50,1875" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salvarCadFotos.do,cadastrar,fotos.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1521,2098" />
+      <AbsolutePoint location="1739,2098" />
+      <AbsolutePoint location="1739,2591" />
+      <AbsolutePoint location="2137,2591" />
+      <AbsolutePoint location="2137,3161" />
+      <AbsolutePoint location="1002,3161" />
+      <AbsolutePoint location="1002,3101" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConsultaJogos.do,listJogos,jogos.listJogos,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2610,3650" />
+      <AbsolutePoint location="2610,2716" />
+      <AbsolutePoint location="733,2716" />
+      <AbsolutePoint location="733,2701" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConJogosQuadrimestre.do,listJogos,jogos.listJogos,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3050,98" />
+      <AbsolutePoint location="569,98" />
+      <AbsolutePoint location="569,2675" />
+      <AbsolutePoint location="650,2675" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConClubeInicio.do,consultar,oclube.inicio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="957,1698" />
+      <AbsolutePoint location="1165,1698" />
+      <AbsolutePoint location="1165,2738" />
+      <AbsolutePoint location="2499,2738" />
+      <AbsolutePoint location="2499,2850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConClubeHistoria.do,consultar,oclube.inicio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,1698" />
+      <AbsolutePoint location="1241,1698" />
+      <AbsolutePoint location="1241,2843" />
+      <AbsolutePoint location="2485,2843" />
+      <AbsolutePoint location="2485,2850" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salvarCadEvento.do,cadastrar,eventos.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2586,1546" />
+      <AbsolutePoint location="2586,1561" />
+      <AbsolutePoint location="1115,1561" />
+      <AbsolutePoint location="1115,3221" />
+      <AbsolutePoint location="2855,3221" />
+      <AbsolutePoint location="2855,2991" />
+      <AbsolutePoint location="1931,2991" />
+      <AbsolutePoint location="1931,2901" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirRankingConsulta.do,consultar,ranking.consulta,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2001,4346" />
+      <AbsolutePoint location="2001,4421" />
+      <AbsolutePoint location="-55,4421" />
+      <AbsolutePoint location="-55,2875" />
+      <AbsolutePoint location="50,2875" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="erro;6,null,/adm/erro.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="706,2531" />
+      <AbsolutePoint location="706,2643" />
+      <AbsolutePoint location="2743,2643" />
+      <AbsolutePoint location="2743,3075" />
+      <AbsolutePoint location="2553,3075" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirCadEvento.do,cadastrar,eventos.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1523,1498" />
+      <AbsolutePoint location="1602,1498" />
+      <AbsolutePoint location="1602,2361" />
+      <AbsolutePoint location="2029,2361" />
+      <AbsolutePoint location="2029,2875" />
+      <AbsolutePoint location="1969,2875" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salvarCadArquivoGaleriaAnterior.do,cadastrar,adm.campeoesanterior,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="321,2534" />
+      <AbsolutePoint location="2296,2534" />
+      <AbsolutePoint location="2296,3050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirCadPartida.do,iniciojogos,/jogos/inicio.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1522,3868" />
+      <AbsolutePoint location="1829,3868" />
+      <AbsolutePoint location="1829,2021" />
+      <AbsolutePoint location="3112,2021" />
+      <AbsolutePoint location="3112,1931" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salvarCadQuadrimestre.do,cadastrar,quadrimestre.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1500,2346" />
+      <AbsolutePoint location="1500,3075" />
+      <AbsolutePoint location="1550,3075" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConQuadrimestre.do,consultar,quadrimestre.consulta,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2729,2146" />
+      <AbsolutePoint location="2729,3243" />
+      <AbsolutePoint location="1324,3243" />
+      <AbsolutePoint location="1324,3101" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/visualizarFotos.do,consultar,fotos.galeria,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2585,1946" />
+      <AbsolutePoint location="2585,1961" />
+      <AbsolutePoint location="1032,1961" />
+      <AbsolutePoint location="1032,2421" />
+      <AbsolutePoint location="833,2421" />
+      <AbsolutePoint location="833,3075" />
+      <AbsolutePoint location="745,3075" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConJogosAno.do,listJogos,jogos.listJogos,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3322,3698" />
+      <AbsolutePoint location="3366,3698" />
+      <AbsolutePoint location="3366,2761" />
+      <AbsolutePoint location="703,2761" />
+      <AbsolutePoint location="703,2701" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirCadArquivoGaleriaAnterior.do,cadastrar,adm.campeoesanterior,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2588,2346" />
+      <AbsolutePoint location="2588,3167" />
+      <AbsolutePoint location="2226,3167" />
+      <AbsolutePoint location="2226,3101" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/enviarEmailAtrasadosPartida.do,cadastrar,jogos.cadastra,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3050,1498" />
+      <AbsolutePoint location="2952,1498" />
+      <AbsolutePoint location="2952,2421" />
+      <AbsolutePoint location="1448,2421" />
+      <AbsolutePoint location="1448,2791" />
+      <AbsolutePoint location="1573,2791" />
+      <AbsolutePoint location="1573,2701" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/excluirCadPartida.do,iniciojogos,/jogos/inicio.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3322,3928" />
+      <AbsolutePoint location="3486,3928" />
+      <AbsolutePoint location="3486,1890" />
+      <AbsolutePoint location="3175,1890" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salvarCadPartida.do,showJogo,jogos.jogo,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2586,3850" />
+      <AbsolutePoint location="2586,3791" />
+      <AbsolutePoint location="-85,3791" />
+      <AbsolutePoint location="-85,2591" />
+      <AbsolutePoint location="1293,2591" />
+      <AbsolutePoint location="1293,2650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirCadPartida.do,iniciojogos,/abrirConJogosQuadrimestre.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1522,3868" />
+      <AbsolutePoint location="1829,3868" />
+      <AbsolutePoint location="1829,68" />
+      <AbsolutePoint location="3050,68" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editarCadQuadrimestre.do,cadastrar,quadrimestre.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="781,2346" />
+      <AbsolutePoint location="781,3397" />
+      <AbsolutePoint location="1454,3397" />
+      <AbsolutePoint location="1454,3089" />
+      <AbsolutePoint location="1550,3089" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salvarDescritivoSite.do,consultar,adm.descritivosite,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1403,1946" />
+      <AbsolutePoint location="1403,2021" />
+      <AbsolutePoint location="638,2021" />
+      <AbsolutePoint location="638,2961" />
+      <AbsolutePoint location="143,2961" />
+      <AbsolutePoint location="143,3050" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirCadNoticia.do,cadastrar,noticias.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1250,1298" />
+      <AbsolutePoint location="1189,1298" />
+      <AbsolutePoint location="1189,2875" />
+      <AbsolutePoint location="1069,2875" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/enviarEmailEncerramentoPartida.do,cadastrar,jogos.cadastra,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="786,4050" />
+      <AbsolutePoint location="786,3991" />
+      <AbsolutePoint location="-25,3991" />
+      <AbsolutePoint location="-25,2991" />
+      <AbsolutePoint location="1654,2991" />
+      <AbsolutePoint location="1654,2701" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConRelatorioAtrasos.do,cadastrar,adm.relatrasos,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2291,3450" />
+      <AbsolutePoint location="2291,3367" />
+      <AbsolutePoint location="3339,3367" />
+      <AbsolutePoint location="3339,1675" />
+      <AbsolutePoint location="3157,1675" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editarCamisas.do,cadastrar,adm.camisas,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="215,3450" />
+      <AbsolutePoint location="215,3361" />
+      <AbsolutePoint location="2199,3361" />
+      <AbsolutePoint location="2199,3301" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirRankingQuadrimestre.do,consultar,ranking.quadrimestre,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="337,4250" />
+      <AbsolutePoint location="337,3621" />
+      <AbsolutePoint location="2089,3621" />
+      <AbsolutePoint location="2089,2675" />
+      <AbsolutePoint location="2150,2675" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/consultarRelatorioAtrasos.do,cadastrar,adm.relatrasos,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3050,698" />
+      <AbsolutePoint location="3012,698" />
+      <AbsolutePoint location="3012,1675" />
+      <AbsolutePoint location="3050,1675" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/excluirFotoselecionada.do,cadastrar,fotos.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1985,2146" />
+      <AbsolutePoint location="1985,2227" />
+      <AbsolutePoint location="1137,2227" />
+      <AbsolutePoint location="1137,3075" />
+      <AbsolutePoint location="1055,3075" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="home;6,null,/inicio.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1613,2490" />
+      <AbsolutePoint location="2584,4298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/editarCadPartida.do,cadastrar,jogos.cadastra,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1850,3898" />
+      <AbsolutePoint location="1769,3898" />
+      <AbsolutePoint location="1769,2791" />
+      <AbsolutePoint location="1603,2791" />
+      <AbsolutePoint location="1603,2701" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/inicio.do,home,home.inicio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2584,4250" />
+      <AbsolutePoint location="2584,4191" />
+      <AbsolutePoint location="1799,4191" />
+      <AbsolutePoint location="1799,2475" />
+      <AbsolutePoint location="1850,2475" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirCadPartida.do,cadastrar,jogos.cadastra,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1522,3898" />
+      <AbsolutePoint location="1739,3898" />
+      <AbsolutePoint location="1739,2675" />
+      <AbsolutePoint location="1656,2675" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirSociosInicio.do,consultar,socios.inicio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3182,2850" />
+      <AbsolutePoint location="3182,2591" />
+      <AbsolutePoint location="2497,2591" />
+      <AbsolutePoint location="2497,2501" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salvarCadNoticia.do,cadastrar,noticias.cadastro,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2450,1298" />
+      <AbsolutePoint location="2347,1298" />
+      <AbsolutePoint location="2347,2961" />
+      <AbsolutePoint location="1039,2961" />
+      <AbsolutePoint location="1039,2901" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConPartida.do,consulta,jogos.consulta,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="50,3898" />
+      <AbsolutePoint location="5,3898" />
+      <AbsolutePoint location="5,2621" />
+      <AbsolutePoint location="1003,2621" />
+      <AbsolutePoint location="1003,2650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConFotos.do,consultar,fotos.inicio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1850,1898" />
+      <AbsolutePoint location="1632,1898" />
+      <AbsolutePoint location="1632,2391" />
+      <AbsolutePoint location="928,2391" />
+      <AbsolutePoint location="928,3221" />
+      <AbsolutePoint location="394,3221" />
+      <AbsolutePoint location="394,3101" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirConClubeEstatuto.do,consultar,oclube.inicio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1850,1698" />
+      <AbsolutePoint location="1684,1698" />
+      <AbsolutePoint location="1684,3043" />
+      <AbsolutePoint location="2499,3043" />
+      <AbsolutePoint location="2499,2901" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/encerrarCadTodasPartida.do,cadastrar,jogos.cadastra,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1850,4098" />
+      <AbsolutePoint location="1543,4098" />
+      <AbsolutePoint location="1543,2689" />
+      <AbsolutePoint location="1550,2689" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/abrirCadSocioPartida.do,cadastrar,jogos.cadastrasocio,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2751,4098" />
+      <AbsolutePoint location="2916,4098" />
+      <AbsolutePoint location="2916,3391" />
+      <AbsolutePoint location="2059,3391" />
+      <AbsolutePoint location="2059,2675" />
+      <AbsolutePoint location="1984,2675" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/salvarCadPartida.do,cadastrar,jogos.cadastra,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2616,3850" />
+      <AbsolutePoint location="2616,3821" />
+      <AbsolutePoint location="3456,3821" />
+      <AbsolutePoint location="3456,2621" />
+      <AbsolutePoint location="1633,2621" />
+      <AbsolutePoint location="1633,2650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

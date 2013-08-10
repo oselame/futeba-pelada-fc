@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+<!-- templates -->
+  <definition name="home.inicio" path="/jsp/home/pfcHomeInicio.jsp">
+	  <put name="cabecalho" value="/jsp/templates/pfcTemplatesCabecalho.jsp" />
+	  <put name="rodape" value="/jsp/templates/pfcTemplatesRodape.jsp" />
+  </definition>
+  <definition name="conteudo.default" path="/jsp/templates/pfcTemplatesConteudoDefault.jsp">
+	  <put name="cabecalho" value="/jsp/templates/pfcTemplatesCabecalho.jsp" />
+	  <put name="rodape" value="/jsp/templates/pfcTemplatesRodape.jsp" />
+  </definition>
+  
+  <definition name="osemautorizacao" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/semautorizacao/pfcSemautorizacaoTitulo.jsp" />
+	  <put name="menu" value="/jsp/semautorizacao/pfcSemautorizacaoMenu.jsp" />
+  </definition>
+  <definition name="semautorizacao.inicio" extends="osemautorizacao">
+	  <put name="conteudo" value="/jsp/semautorizacao/pfcSemautorizacaoSemautorizacao.jsp" />
+  </definition>
+  
+<!-- ADM -->
+  <definition name="adm" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/adm/pfcAdmTitulo.jsp" />
+	  <put name="menu" value="/jsp/adm/pfcAdmMenu.jsp" />
+  </definition>
+  <definition name="adm.inicio" extends="adm">
+	  <put name="conteudo" value="/jsp/adm/pfcAdmInicio.jsp" />
+  </definition>  
+  <definition name="adm.campeoesanterior" extends="adm">
+	  <put name="conteudo" value="/jsp/adm/pfcAdmCadArqGaleriaAnterior.jsp" />
+  </definition>
+  <definition name="adm.descritivosite" extends="adm">
+	  <put name="conteudo" value="/jsp/adm/pfcAdmDescritivosite.jsp" />
+  </definition> 
+   <definition name="adm.camisas" extends="adm">
+	  <put name="conteudo" value="/jsp/timecamisa/pfcTimecamisaTimecamisa.jsp" />
+  </definition> 
+  <definition name="adm.relatrasos" extends="adm">
+	  <put name="conteudo" value="/jsp/relatorios/pfcRelatorioAtrasos.jsp" />
+  </definition>	  
+
+<!-- O clube -->
+  <definition name="oclube" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/oclube/pfcOclubeTitulo.jsp" />
+	  <put name="menu" value="/jsp/oclube/pfcOclubeMenu.jsp" />
+  </definition>
+  <definition name="oclube.inicio" extends="oclube">
+	  <put name="conteudo" value="/jsp/oclube/pfcOclubeInicio.jsp" />
+  </definition>  
+
+<!-- Ranking --> 
+  <definition name="ranking" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/ranking/pfcRankingTitulo.jsp" />
+	  <put name="menu" value="/jsp/ranking/pfcRankingMenu.jsp" />
+  </definition>
+  <definition name="ranking.inicio" extends="ranking">
+	  <put name="conteudo" value="/jsp/ranking/pfcRankingRanking.jsp" />
+  </definition>   
+  <definition name="ranking.quadrimestre" extends="ranking">
+	  <put name="conteudo" value="/jsp/ranking/pfcRankingRanking.jsp" />
+  </definition>   
+  <definition name="ranking.ano" extends="ranking">
+  		<!-- ver -->
+	  <put name="conteudo" value="/jsp/ranking/pfcRankingAno.jsp" />
+  </definition>   
+  <definition name="ranking.consulta" extends="ranking">
+	  <put name="conteudo" value="/jsp/ranking/pfcRankingConsulta.jsp" />
+  </definition>
+  <definition name="ranking.listRanking" extends="ranking">
+	  <put name="conteudo" value="/jsp/ranking/pfcRankingRanking.jsp" />
+  </definition>
+            
+<!-- Socios --> 
+  <definition name="socios" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/socios/pfcSociosTitulo.jsp" />
+	  <put name="menu" value="/jsp/socios/pfcSociosMenu.jsp" />
+  </definition>
+  <definition name="socios.inicio" extends="socios">
+	  <put name="conteudo" value="/jsp/socios/pfcSociosInicio.jsp" />
+  </definition>    
+  <definition name="socios.socio" extends="socios">
+	  <put name="conteudo" value="/jsp/socios/pfcSociosSocio.jsp" />
+  </definition>     
+  <definition name="socios.aniversariantes" extends="socios">
+	  <put name="conteudo" value="/jsp/socios/pfcSociosAniversariantes.jsp" />
+  </definition>      
+  
+<!-- Jogos --> 
+  <definition name="jogos" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/jogos/pfcJogosTitulo.jsp" />
+	  <put name="menu" value="/jsp/jogos/pfcJogosMenu.jsp" />
+  </definition>  
+  <definition name="jogos.listJogos" extends="jogos">
+	  <put name="conteudo" value="/jsp/jogos/pfcJogosListJogos.jsp" />
+  </definition>      
+  <definition name="jogos.consulta" extends="jogos">
+	  <put name="conteudo" value="/jsp/jogos/pfcJogosConsulta.jsp" />
+  </definition>    
+  <definition name="jogos.jogo" extends="jogos">
+	  <put name="conteudo" value="/jsp/jogos/pfcJogosJogo.jsp" />
+  </definition>
+  <definition name="jogos.cadastra" extends="jogos">
+	  <put name="conteudo" value="/jsp/jogos/pfcJogosCadastro.jsp" />
+  </definition>
+  <definition name="jogos.cadastrasocio" extends="jogos">
+	  <put name="conteudo" value="/jsp/jogos/pfcJogosCadastroJogadores.jsp" />
+  </definition> 
+     
+<!-- Fotos --> 
+  <definition name="fotos" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/fotos/pfcFotosTitulo.jsp" />
+	  <put name="menu" value="/jsp/fotos/pfcFotosMenu.jsp" />
+  </definition>
+  <definition name="fotos.inicio" extends="fotos">
+	  <put name="conteudo" value="/jsp/fotos/pfcFotosListFotos.jsp" />
+  </definition>
+  <definition name="fotos.galeria" extends="fotos">
+	  <put name="conteudo" value="/jsp/fotos/pfcFotosGaleria.jsp" />
+  </definition>
+  <definition name="fotos.cadastro" extends="fotos">
+	  <put name="conteudo" value="/jsp/fotos/pfcFotosCadFotos.jsp" />
+  </definition>   
+           
+<!-- Amistosos  
+  <definition name="amistosos" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/amistosos/titulo.jsp" />
+	  <put name="menu" value="/jsp/amistosos/menu.jsp" />
+  </definition>
+  <definition name="amistosos.inicio" extends="amistosos">
+	  <put name="conteudo" value="/jsp/amistosos/inicio.jsp" />
+  </definition>
+-->  
+     
+<!-- Noticias --> 
+  <definition name="noticias" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/noticias/pfcNoticiasTitulo.jsp" />
+	  <put name="menu" value="/jsp/noticias/pfcNoticiasMenu.jsp" />
+  </definition>
+  <definition name="noticias.inicio" extends="noticias">
+  	<!-- ver -->
+	  <put name="conteudo" value="/jsp/noticias/pfcNoticiasInicio.jsp" />
+  </definition>   
+  <definition name="noticias.list" extends="noticias">
+	  <put name="conteudo" value="/jsp/noticias/pfcNoticiasListNoticias.jsp" />
+  </definition>    
+  <definition name="noticias.noticia" extends="noticias">
+	  <put name="conteudo" value="/jsp/noticias/pfcNoticiasNoticia.jsp" />
+  </definition>
+  <definition name="noticias.cadastro" extends="noticias">
+	  <put name="conteudo" value="/jsp/noticias/pfcNoticiasCadNoticia.jsp" />
+  </definition>
+  
+<!-- Eventos --> 
+  <definition name="eventos" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/eventos/pfcEventosTitulo.jsp" />
+	  <put name="menu" value="/jsp/eventos/pfcEventosMenu.jsp" />
+  </definition>
+  <definition name="eventos.inicio" extends="eventos">
+	  <put name="conteudo" value="/jsp/eventos/pfcEventosListEventos.jsp" />
+  </definition>
+  <definition name="eventos.cadastro" extends="eventos">
+	  <put name="conteudo" value="/jsp/eventos/pfcEventosCadEventos.jsp" />
+  </definition>
+  <definition name="eventos.evento" extends="eventos">
+	  <put name="conteudo" value="/jsp/eventos/pfcEventosEventos.jsp" />
+  </definition>
+  <definition name="eventos.list" extends="eventos">
+	  <put name="conteudo" value="/jsp/eventos/pfcEventosListEventos.jsp" />
+  </definition>    
+     
+<!-- Noticias ADM  
+  <definition name="adm.noticias" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/noticias/titulo.jsp" />
+	  <put name="menu" value="/jsp/adm/menu.jsp" />
+  </definition>
+  <definition name="adm.noticias.list" extends="adm.noticias">
+	  <put name="conteudo" value="/jsp/adm/listNoticias.jsp" />
+  </definition>     
+  <definition name="adm.noticias.noticia" extends="adm.noticias">
+	  <put name="conteudo" value="/jsp/adm/noticia.jsp" />
+  </definition> 
+-->
+
+  <definition name="quadrimestres" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/quadrimestre/pfcQuadrimestreTitulo.jsp" />
+	  <put name="menu" value="/jsp/quadrimestre/pfcQuadrimestreMenu.jsp" />
+  </definition>
+  <definition name="quadrimestre.consulta" extends="quadrimestres">
+	  <put name="conteudo" value="/jsp/quadrimestre/pfcQuadrimestreListQuadrimestres.jsp" />
+  </definition>
+  <definition name="quadrimestre.cadastro" extends="quadrimestres">
+	  <put name="conteudo" value="/jsp/quadrimestre/pfcQuadrimestreCadQuadrimestre.jsp" />
+  </definition>
+  
+  <definition name="galerias" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/galeria/pfcGaleriaTitulo.jsp" />
+	  <put name="menu" value="/jsp/galeria/pfcGaleriaMenu.jsp" />
+  </definition>
+  <definition name="galerias.consulta" extends="galerias">
+	  <put name="conteudo" value="/jsp/galeria/pfcGaleriaListGalerias.jsp" />
+  </definition>
+  
+    <definition name="maiorescampeoes" extends="conteudo.default">
+	  <put name="titulo" value="/jsp/galeria/pfcGaleriaTitulo.jsp" />
+	  <put name="menu" value="/jsp/galeria/pfcGaleriaMenu.jsp" />
+  </definition>
+  <definition name="maiorescampeoes.consulta" extends="maiorescampeoes">
+	  <put name="conteudo" value="/jsp/galeria/pfcGaleriaListMaiorescampeoes.jsp" />
+  </definition>
+  
+</tiles-definitions>
