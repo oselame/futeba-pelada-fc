@@ -1,0 +1,541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+	<form-beans >
+		<form-bean name="socioForm" type="br.com.softal.pfc.struts.action.SocioForm" />
+		<form-bean name="partidaForm" type="br.com.softal.pfc.struts.action.PartidaForm" />
+		<form-bean name="sociopartidaForm" type="br.com.softal.pfc.struts.action.SociopartidaForm" />
+		<form-bean name="loginForm" type="br.com.softal.pfc.struts.action.LoginForm" />
+		<form-bean name="classificacaoForm" type="br.com.softal.pfc.struts.action.ClassificacaoForm" />
+		<form-bean name="noticiaForm" type="br.com.softal.pfc.struts.action.NoticiaForm" />
+		<form-bean name="configuracaoForm" type="br.com.softal.pfc.struts.action.ConfiguracaoForm" />
+		<form-bean name="galeriaForm" type="br.com.softal.pfc.struts.action.GaleriaForm" />
+		<form-bean name="quadrimestreForm" type="br.com.softal.pfc.struts.action.QuadrimestreForm" />	
+		<form-bean name="timecamisaForm" type="br.com.softal.pfc.struts.action.TimecamisaForm" />	
+		<form-bean name="relatorioForm" type="br.com.softal.pfc.struts.action.RelatorioForm" />	
+	</form-beans>
+
+	<global-exceptions />
+	<global-forwards>
+		<forward name="error" path="/pfcError.jsp"/>
+        <forward name="erro" path="/adm/erro.jsp"/>
+        <forward name="semautorizacao" path="semautorizacao.inicio"/>
+        <forward name="mensagem" path="/adm/mensagem.do"/>
+        <forward name="ranking" path="ranking.quadrimestre"/>
+        <forward name="home" path="/inicio.do"/>
+    </global-forwards>
+    
+	<action-mappings>
+<!-- Home -->			
+	<action
+		path="/inicio"
+		type="br.com.softal.pfc.struts.action.HomeAction"
+		validate="false" >
+		<forward name="home" path="home.inicio"/>
+		<forward name="home2" path="/jsp/home/pfcHomeInicio2.jsp"/>
+	</action>
+	<action path="/logoff"
+		type="br.com.softal.pfc.struts.action.LoginAction"
+		name="loginForm"	
+		scope="request"	
+		validate="false">
+		<forward name="inicio" path="/inicio.do"/>
+	</action>	
+	
+<!-- ADM -->
+	<action path="/login"
+		type="br.com.softal.pfc.struts.action.LoginAction"
+		name="loginForm"	
+		scope="request"	
+		validate="false">
+		<forward name="inicio" path="adm.inicio"/>		
+	</action>
+	
+<!-- Socios -->	
+	<action path="/abrirSociosInicio"
+		type="br.com.softal.pfc.struts.action.SocioAction"
+		name="socioForm"
+		scope="request">
+		<forward name="consultar" path="socios.inicio"/>
+	</action>
+	<action path="/abrirSociosShowSocio"
+		type="br.com.softal.pfc.struts.action.SocioAction"
+		name="socioForm"
+		scope="request">
+		<forward name="cadastrar" path="socios.socio"/>
+	</action>
+	<action path="/abrirSocioAniversariantes"
+		type="br.com.softal.pfc.struts.action.SocioAction"
+		name="socioForm"
+		scope="request">
+		<forward name="consultar" path="socios.aniversariantes"/>
+	</action>
+	<action path="/abrirSocioImagemSocio"
+		type="br.com.softal.pfc.struts.action.SocioAction"
+		name="socioForm"
+		scope="request">
+	</action>
+	
+	<action path="/abrirCadSocio"
+		type="br.com.softal.pfc.struts.action.SocioAction"
+		name="socioForm"
+		scope="request">
+		<forward name="cadastrar" path="socios.socio"/>
+	</action>
+	<action path="/salvarCadSocio"
+		type="br.com.softal.pfc.struts.action.SocioAction"
+		name="socioForm"
+		scope="request">
+		<forward name="cadastrar" path="socios.socio"/>
+	</action>
+	<action path="/excluirCadSocio"
+		type="br.com.softal.pfc.struts.action.SocioAction"
+		name="socioForm"
+		scope="request">
+		<forward name="cadastrar" path="socios.socio"/>
+	</action>
+	
+<!-- Jogos site -->
+	<action
+		path="/abrirConJogosQuadrimestre"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="listJogos" path="jogos.listJogos"/>
+	</action>
+	<!-- 
+	<action
+		path="/jogos/quadrimestre"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="listJogos" path="jogos.listJogos"/>
+	</action>  -->
+	<action
+		path="/abrirConsultaJogos"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="listJogos" path="jogos.listJogos"/>
+	</action>	
+	<action
+		path="/abrirConJogosAno"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="listJogos" path="jogos.listJogos"/>
+	</action>
+	<action 
+		path="/abrirConPartida"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="consulta" path="jogos.consulta"/>
+	</action>
+	<action
+		path="/abrirConJogosShow"
+		name="partidaForm"
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="showJogo" path="jogos.jogo"/>
+	</action>
+	<action
+		path="/abrirCadPartida"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastra"/>
+		<forward name="iniciojogos" path="/abrirConJogosQuadrimestre.do"/>
+	</action>	
+	<action
+		path="/editarCadPartida"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastra"/>
+	</action>	
+	<action
+		path="/salvarCadPartida"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastra"/>
+		<forward name="showJogo" path="jogos.jogo"/>
+	</action>
+	<action
+		path="/excluirCadPartida"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastra"/>
+		<forward name="iniciojogos" path="/abrirConJogosQuadrimestre.do"/>
+	</action>
+	<action
+		path="/encerrarCadPartida"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastra"/>
+	</action>
+	<action
+		path="/enviarEmailEncerramentoPartida"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastra"/>
+	</action>	
+	<action path="/enviarEmailAtrasadosPartida"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastra"/>
+	</action>	
+	<action
+		path="/reabrirCadPartida"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastra"/>
+	</action>	
+	<action
+		path="/encerrarCadTodasPartida"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastra"/>
+	</action>
+		
+	<!-- action forward="/jogos/quadrimestre.do" path="/abrirConJogosQuadrimestre.do" / -->
+	
+<!--  -->	
+	<action
+		path="/abrirCadSocioPartida"
+		name="sociopartidaForm"		
+		type="br.com.softal.pfc.struts.action.SociopartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastrasocio"/>
+	</action>	
+	<action
+		path="/salvarCadSocioPartida"
+		name="sociopartidaForm"		
+		type="br.com.softal.pfc.struts.action.SociopartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastrasocio"/>
+	</action>
+	
+<!-- Ranking -->	
+	<action path="/abrirRankingQuadrimestre"
+		type="br.com.softal.pfc.struts.action.ClassificacaoAction"
+		name="classificacaoForm"
+		validate="false">
+		<forward name="consultar" path="ranking.quadrimestre"/>		
+	</action>
+	<action path="/abrirConRanking"
+		type="br.com.softal.pfc.struts.action.ClassificacaoAction"
+		name="classificacaoForm"
+		validate="false">
+		<forward name="consultar" path="ranking.listRanking"/>
+	</action>	
+	<action path="/abrirConRankingAno"
+		type="br.com.softal.pfc.struts.action.ClassificacaoAction"
+		name="classificacaoForm"
+		validate="false">
+		<forward name="consultar" path="ranking.quadrimestre"/>
+	</action>
+	<action path="/abrirRankingConsulta"
+		type="br.com.softal.pfc.struts.action.ClassificacaoAction"
+		name="classificacaoForm"
+		validate="false">
+		<forward name="consultar" path="ranking.consulta"/>
+	</action>
+	
+<!-- Noticias -->	
+	<action  path="/abrirConNoticias"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="consultar" path="noticias.list"/>
+	</action>	
+	<action  path="/consultarNoticias"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="consultar" path="noticias.list"/>
+	</action>
+	<action path="/visualizarNoticias"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="consultar" path="noticias.noticia"/>
+	</action>
+	<action path="/abrirCadNoticia"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="cadastrar" path="noticias.cadastro"/>
+	</action>
+	<action path="/editarCadNoticia"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="cadastrar" path="noticias.cadastro"/>
+	</action>
+	<action path="/salvarCadNoticia"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="cadastrar" path="noticias.cadastro"/>
+	</action>
+	<action path="/excluirCadNoticia"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="cadastrar" path="noticias.cadastro"/>
+	</action>
+	
+	<action  path="/abrirConEventos"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="consultar" path="eventos.inicio"/>
+	</action>
+	<action  path="/consultarEventos"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="consultar" path="eventos.list"/>
+	</action>	
+	<action path="/abrirCadEvento"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="cadastrar" path="eventos.cadastro"/>
+	</action>
+	<action path="/editarCadEvento"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="cadastrar" path="eventos.cadastro"/>
+	</action>
+	<action path="/salvarCadEvento"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="cadastrar" path="eventos.cadastro"/>
+	</action>
+	<action path="/excluirCadEvento"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="cadastrar" path="eventos.cadastro"/>
+	</action>		
+	<action path="/visualizarEventos"
+		type="br.com.softal.pfc.struts.action.NoticiaAction"
+		name="noticiaForm"
+		validate="false">
+		<forward name="consultar" path="eventos.evento"/>
+	</action>
+	
+	<!-- oclube -->
+	<action path="/abrirConClubeInicio"
+		type="br.com.softal.pfc.struts.action.ConfiguracaoAction"
+		name="configuracaoForm"
+		validate="false">
+		<forward name="consultar" path="oclube.inicio"/>
+	</action>
+	<action path="/abrirConClubeHistoria"
+		type="br.com.softal.pfc.struts.action.ConfiguracaoAction"
+		name="configuracaoForm"
+		validate="false">
+		<forward name="consultar" path="oclube.inicio"/>
+	</action>
+	<action path="/abrirConClubeEstatuto"
+		type="br.com.softal.pfc.struts.action.ConfiguracaoAction"
+		name="configuracaoForm"
+		validate="false">
+		<forward name="consultar" path="oclube.inicio"/>
+	</action>
+	<action path="/abrirConClubeDiretoria"
+		type="br.com.softal.pfc.struts.action.ConfiguracaoAction"
+		name="configuracaoForm"
+		validate="false">
+		<forward name="consultar" path="oclube.inicio"/>
+	</action>
+	<action path="/abrirConClubeCamisas"
+		type="br.com.softal.pfc.struts.action.ConfiguracaoAction"
+		name="configuracaoForm"
+		validate="false">
+		<forward name="consultar" path="oclube.inicio"/>
+	</action>	
+	<action path="/salvarCadConfiguracao"
+		type="br.com.softal.pfc.struts.action.ConfiguracaoAction"
+		name="configuracaoForm"
+		validate="false">
+		<forward name="consultar" path="oclube.inicio"/>
+	</action>
+	
+	<action path="/editarDescritivoSite"
+		type="br.com.softal.pfc.struts.action.ConfiguracaoAction"
+		name="configuracaoForm"
+		validate="false">
+		<forward name="consultar" path="adm.descritivosite"/>
+	</action>
+	<action path="/salvarDescritivoSite"
+		type="br.com.softal.pfc.struts.action.ConfiguracaoAction"
+		name="configuracaoForm"
+		validate="false">
+		<forward name="consultar" path="adm.descritivosite"/>
+	</action>
+	
+	<action path="/editarCamisas"
+		type="br.com.softal.pfc.struts.action.TimecamisaAction"
+		name="timecamisaForm"
+		validate="false">
+		<forward name="cadastrar" path="adm.camisas"/>
+	</action>
+	<action path="/salvarCamisas"
+		type="br.com.softal.pfc.struts.action.TimecamisaAction"
+		name="timecamisaForm"
+		validate="false">
+		<forward name="cadastrar" path="adm.camisas"/>
+	</action>
+	
+	
+	<action path="/abrirConFotos" 
+		type="br.com.softal.pfc.struts.action.GaleriaAction"
+		name="galeriaForm"
+		validate="false">
+		<forward name="consultar" path="fotos.inicio"/>
+	</action>
+	<action path="/visualizarFotos" 
+		type="br.com.softal.pfc.struts.action.GaleriaAction"
+		name="galeriaForm"
+		validate="false">
+		<forward name="consultar" path="fotos.galeria"/>
+	</action>
+	
+	<action path="/abrirCadFotos" 
+		type="br.com.softal.pfc.struts.action.GaleriaAction"
+		name="galeriaForm"
+		validate="false">
+		<forward name="cadastrar" path="fotos.cadastro"/>
+	</action>
+	<action path="/editarCadFotos" 
+		type="br.com.softal.pfc.struts.action.GaleriaAction"
+		name="galeriaForm"
+		validate="false">
+		<forward name="cadastrar" path="fotos.cadastro"/>
+	</action>
+	<action path="/salvarCadFotos" 
+		type="br.com.softal.pfc.struts.action.GaleriaAction"
+		name="galeriaForm"
+		validate="false">
+		<forward name="cadastrar" path="fotos.cadastro"/>
+	</action>
+		<action path="/salvarFotos" 
+		type="br.com.softal.pfc.struts.action.GaleriaAction"
+		name="galeriaForm"
+		validate="false">
+		<forward name="cadastrar" path="fotos.cadastro"/>
+	</action>
+	<action path="/excluirFotoselecionada" 
+		type="br.com.softal.pfc.struts.action.GaleriaAction"
+		name="galeriaForm"
+		validate="false">
+		<forward name="cadastrar" path="fotos.cadastro"/>
+	</action>	
+		
+	
+	<!-- quadrimestreForm -->
+	<action path="/abrirConQuadrimestre" 
+		type="br.com.softal.pfc.struts.action.QuadrimestreAction"
+		name="quadrimestreForm"
+		validate="false">
+		<forward name="consultar" path="quadrimestre.consulta"/>
+	</action>
+	
+	<action path="/abrirCadQuadrimestre" 
+		type="br.com.softal.pfc.struts.action.QuadrimestreAction"
+		name="quadrimestreForm"
+		validate="false">
+		<forward name="cadastrar" path="quadrimestre.cadastro"/>
+	</action>
+	<action path="/editarCadQuadrimestre" 
+		type="br.com.softal.pfc.struts.action.QuadrimestreAction"
+		name="quadrimestreForm"
+		validate="false">
+		<forward name="cadastrar" path="quadrimestre.cadastro"/>
+	</action>
+	<action path="/salvarCadQuadrimestre" 
+		type="br.com.softal.pfc.struts.action.QuadrimestreAction"
+		name="quadrimestreForm"
+		validate="false">
+		<forward name="cadastrar" path="quadrimestre.cadastro"/>
+	</action>
+	
+	<action path="/abrirConGaleriacampeoes" 
+		type="br.com.softal.pfc.struts.action.QuadrimestreAction"
+		name="quadrimestreForm"
+		validate="false">
+		<forward name="consultar" path="galerias.consulta"/>
+	</action>
+	
+	<action path="/abrirConMaiorescampeoes" 
+		type="br.com.softal.pfc.struts.action.QuadrimestreAction"
+		name="quadrimestreForm"
+		validate="false">
+		<forward name="consultar" path="maiorescampeoes.consulta"/>
+	</action>	
+
+	<action path="/abrirCadArquivoGaleriaAnterior" 
+		type="br.com.softal.pfc.struts.action.GaleriaAction"
+		name="galeriaForm"
+		validate="false">
+		<forward name="cadastrar" path="adm.campeoesanterior"/>
+	</action>
+	<action path="/salvarCadArquivoGaleriaAnterior" 
+		type="br.com.softal.pfc.struts.action.GaleriaAction"
+		name="galeriaForm"
+		validate="false">
+		<forward name="cadastrar" path="adm.campeoesanterior"/>
+	</action>
+	
+	<action path="/abrirConRelatorioAtrasos" 
+		type="br.com.softal.pfc.struts.action.RelatorioAction"
+		name="relatorioForm"
+		validate="false">
+		<forward name="cadastrar" path="adm.relatrasos"/>
+	</action>	
+	<action path="/consultarRelatorioAtrasos" 
+		type="br.com.softal.pfc.struts.action.RelatorioAction"
+		name="relatorioForm"
+		validate="false">
+		<forward name="cadastrar" path="adm.relatrasos"/>
+	</action>	
+	<action path="/imprimirRelatorioAtrasos" 
+		type="br.com.softal.pfc.struts.action.RelatorioAction"
+		name="relatorioForm"
+		validate="false">
+		<forward name="cadastrar" path="adm.relatrasos"/>
+	</action>	
+	
+	
+	
+	
+	
+</action-mappings >
+				
+	<controller />
+		<message-resources parameter="ApplicationResources" />
+	
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+    	<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+    	<set-property property="definitions-debug" value="2" />
+    	<set-property property="definitions-parser-details" value="2" />
+    	<set-property property="definitions-parser-validate" value="true" />
+    	<set-property property="moduleAware" value="true" />
+  	</plug-in>
+  	
+	
+	
+</struts-config>
