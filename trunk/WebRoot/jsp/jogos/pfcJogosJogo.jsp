@@ -164,7 +164,7 @@
 									&nbsp;
 								</td>
 								<td>
-									<bean:write name="partidaForm" property="entidade.deBolacheia" />
+									${partidaForm.entidade.deBolacheia}
 								</td>
 							</tr>	   
 							</table>	
@@ -185,7 +185,7 @@
 									&nbsp;
 								</td>
 								<td>
-									<bean:write name="partidaForm" property="entidade.deBolamurcha" />
+									${partidaForm.entidade.deBolamurcha}
 								</td>
 							</tr>	   
 							</table>
