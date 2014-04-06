@@ -48,6 +48,14 @@
 				<bean:write name="partidaForm" property="entidade.dtPartidaformatada"/>
 			</td>
 		</tr>
+		<tr>
+			<td align="right">
+				<b>Juiz:</b>
+			</td>
+			<td colspan="3">
+				<bean:write name="partidaForm" property="entidade.nmJuiz"/>
+			</td>		
+		</tr>
 	</table>
 	<br>
 	
