@@ -5,6 +5,7 @@
 		<form-bean name="socioForm" type="br.com.softal.pfc.struts.action.SocioForm" />
 		<form-bean name="partidaForm" type="br.com.softal.pfc.struts.action.PartidaForm" />
 		<form-bean name="sociopartidaForm" type="br.com.softal.pfc.struts.action.SociopartidaForm" />
+		<form-bean name="punicaopartidaForm" type="br.com.softal.pfc.struts.action.PunicaopartidaForm" />
 		<form-bean name="loginForm" type="br.com.softal.pfc.struts.action.LoginForm" />
 		<form-bean name="classificacaoForm" type="br.com.softal.pfc.struts.action.ClassificacaoForm" />
 		<form-bean name="noticiaForm" type="br.com.softal.pfc.struts.action.NoticiaForm" />
@@ -219,6 +220,22 @@
 		path="/salvarCadSocioPartida"
 		name="sociopartidaForm"		
 		type="br.com.softal.pfc.struts.action.SociopartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastrasocio"/>
+	</action>
+	
+<!-- MULTA PARTIDA -->	
+	<action
+		path="/abrirCadMultaPartida"
+		name="punicaopartida"		
+		type="br.com.softal.pfc.struts.action.PunicaopartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastrasocio"/>
+	</action>	
+	<action
+		path="/salvarCadMultaPartida"
+		name="punicaopartida"		
+		type="br.com.softal.pfc.struts.action.PunicaopartidaAction"
 		validate="false">
 		<forward name="cadastrar" path="jogos.cadastrasocio"/>
 	</action>
