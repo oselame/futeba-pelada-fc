@@ -46,7 +46,7 @@ public class SociopartidaAction extends PfcAction {
 			Timecamisa timeB = timecamisaDAO.findTimecamisa( Timecamisa.TIME_CAMISA_B );
 			request.getSession().setAttribute(Constantes.SESSION_NMTIMEA, timeA.getNmTime());
 			request.getSession().setAttribute(Constantes.SESSION_NMTIMEB, timeB.getNmTime());
-			List socios = sociopartidaDAO.findAllJogodoresTimes( sociopartida );
+			List socios = sociopartidaDAO.findAllJogodoresTimes( sociopartida.getSociopartidaPK().getCdPartida() );
 			sociopartidaForm.setNuJogadores( socios.size() );
 			sociopartidaForm.setRows( socios );
 		} catch (Exception e) {

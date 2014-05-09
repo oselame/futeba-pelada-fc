@@ -109,6 +109,9 @@
   </definition>
   <definition name="jogos.cadastrasocio" extends="jogos">
 	  <put name="conteudo" value="/jsp/jogos/pfcJogosCadastroJogadores.jsp" />
+  </definition>
+  <definition name="jogos.cadastropunicao" extends="jogos">
+	  <put name="conteudo" value="/jsp/jogos/pfcJogosCadastroPunicoes.jsp" />
   </definition> 
      
 <!-- Fotos --> 

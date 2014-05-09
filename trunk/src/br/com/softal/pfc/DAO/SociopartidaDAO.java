@@ -8,7 +8,7 @@ import br.com.softal.pfc.dto.RelatorioDto;
 public interface SociopartidaDAO extends DAO {
 	
 	@SuppressWarnings("unchecked")
-	List findAllJogodoresTimes(Object obj) throws DAOException;
+	List findAllJogodoresTimes(Integer cdPartida) throws DAOException;
 	Boolean existeParticipantes(Integer cdPartida) throws DAOException;
 	List<RelatorioDto> findAllSociosAtrazados(RelatorioDto relatorioDto) throws DAOException;
 	Boolean existeAtrasadosOuCartoes(Integer cdPartida) throws DAOException;
