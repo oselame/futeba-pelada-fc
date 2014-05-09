@@ -5,13 +5,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import br.com.softal.pfc.Punicaopartida;
-import br.com.softal.pfc.Sociopartida;
 import br.com.softal.pfc.DAO.DAOException;
 import br.com.softal.pfc.DAO.PunicaopartidaDAO;
 import br.com.softal.pfc.DAO.ServiceLocator;
@@ -79,6 +80,15 @@ public class RdbPunicaopartidaDAO implements PunicaopartidaDAO {
 		} finally {
 			try { RdbUtil.close(pstmt, con); } catch (SQLException e) {}
 		}
+	}
+	
+	public Map<Integer, Punicaopartida> findAllMapJogodoresPartida(Integer cdPartida) throws DAOException {
+		Map<Integer, Punicaopartida> map = new HashMap<Integer, Punicaopartida>();
+		List<Punicaopartida> participantes = this.findAllJogodoresPartida(cdPartida);
+		for (Punicaopartida pp : participantes) {
+			map.put(pp.getPunicaopartidaPK().getCdSocio(), pp);
+		}
+		return map;
 	}
 	
 	public List<Punicaopartida> findAllJogodoresPartida(Integer cdPartida) throws DAOException {

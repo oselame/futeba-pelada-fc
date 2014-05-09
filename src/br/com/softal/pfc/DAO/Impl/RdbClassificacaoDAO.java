@@ -17,6 +17,7 @@ import org.apache.commons.logging.LogFactory;
 
 import br.com.softal.pfc.Classificacao;
 import br.com.softal.pfc.Partida;
+import br.com.softal.pfc.Punicaopartida;
 import br.com.softal.pfc.Quadrimestre;
 import br.com.softal.pfc.Socio;
 import br.com.softal.pfc.DAO.ClassificacaoDAO;
@@ -244,6 +245,8 @@ public class RdbClassificacaoDAO implements ClassificacaoDAO {
 			
 			//-- Dados da Partida Atual
 			Map<String, ClassificacaoDto> map = carregaDadosPartidaAtual( partida );
+			//-- Dados Punicoes
+			Map<Integer, Punicaopartida> punicoesMap = DAOFactory.getPunicaopartidaDAO().findAllMapJogodoresPartida(cdPartida);
 			
 			if (partidaAnterior != null) {
 				if (partidaAnterior.getNuAno().equals(partida.getNuAno())) {
@@ -286,8 +289,6 @@ public class RdbClassificacaoDAO implements ClassificacaoDAO {
 					}
 					
 					ClassificacaoDto pAtual = map.get(cl.getCdSocio().toString());
-					
-					
 					//-- Calculos				
 					if (pAtual.getCdTime() != null && pAtual.getCdTime() > 0) {
 						if (partida.getFlEmpate() == 1) {
@@ -313,6 +314,11 @@ public class RdbClassificacaoDAO implements ClassificacaoDAO {
 							cl.setNuCartaoamarelo( cl.getNuCartaoamarelo() + 1);
 							cl.setNuPontos( cl.getNuPontos() - 1 );
 						}
+					}
+					if ((punicoesMap.get(cl.getCdSocio()) != null) && (punicoesMap.get(cl.getCdSocio()).getNuPontospunicao() > 0)) {
+						Integer nuPontos = cl.getNuPontos();
+						nuPontos -= punicoesMap.get(cl.getCdSocio()).getNuPontospunicao();
+						cl.setNuPontos(nuPontos);
 					}
 				}
 	
@@ -357,6 +363,8 @@ public class RdbClassificacaoDAO implements ClassificacaoDAO {
 			
 			//-- Dados da Partida Atual
 			Map<String, ClassificacaoDto> map = carregaDadosPartidaAtual( partida );
+			//-- Dados Punicoes
+			Map<Integer, Punicaopartida> punicoesMap = DAOFactory.getPunicaopartidaDAO().findAllMapJogodoresPartida(cdPartida);
 			
 			if (partidaAnterior != null) {
 				if (partidaAnterior.getNuAno().equals(partida.getNuAno())) {
@@ -425,6 +433,12 @@ public class RdbClassificacaoDAO implements ClassificacaoDAO {
 							cl.setNuCartaoamarelo( cl.getNuCartaoamarelo() + 1);
 							cl.setNuPontos( cl.getNuPontos() - 1 );
 						}
+					}
+					
+					if ((punicoesMap.get(cl.getCdSocio()) != null) && (punicoesMap.get(cl.getCdSocio()).getNuPontospunicao() > 0)) {
+						Integer nuPontos = cl.getNuPontos();
+						nuPontos -= punicoesMap.get(cl.getCdSocio()).getNuPontospunicao();
+						cl.setNuPontos(nuPontos);
 					}
 				}
 	
