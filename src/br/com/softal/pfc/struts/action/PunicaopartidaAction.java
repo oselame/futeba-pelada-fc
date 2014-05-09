@@ -1,42 +1,52 @@
 package br.com.softal.pfc.struts.action;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
+import org.apache.struts.action.ActionMessages;
+
+import br.com.softal.pfc.Constantes;
+import br.com.softal.pfc.Partida;
+import br.com.softal.pfc.Punicaopartida;
+import br.com.softal.pfc.Sociopartida;
+import br.com.softal.pfc.DAO.DAOFactory;
+import br.com.softal.pfc.DAO.PartidaDAO;
+import br.com.softal.pfc.DAO.PunicaopartidaDAO;
+import br.com.softal.pfc.DAO.SociopartidaDAO;
  
 public class PunicaopartidaAction extends PfcAction {
 
 	public ActionForward abrirCadMultaPartida(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {		
-		/*
-		SociopartidaForm sociopartidaForm = (SociopartidaForm) form;
-		Sociopartida sociopartida = (Sociopartida) sociopartidaForm.getEntidade();
+		PunicaopartidaForm punicaopartidaForm = (PunicaopartidaForm) form;
+		Punicaopartida punicaopartida = (Punicaopartida) punicaopartidaForm.getEntidade();
 		if (request.getParameter("cdPartida") != null) {
 			Integer cdPartida = Integer.valueOf(request.getParameter("cdPartida"));
-			sociopartida.getSociopartidaPK().setCdPartida( cdPartida );
+			punicaopartida.getPunicaopartidaPK().setCdPartida( cdPartida );
 		}
 		
-		SociopartidaDAO sociopartidaDAO = DAOFactory.getSociopartidaDAO();
+		PunicaopartidaDAO punicaopartidaDAO = DAOFactory.getPunicaopartidaDAO();
 		
 		PartidaDAO partidaDAO = DAOFactory.getPartidaDAO();
-		sociopartida.setPartida( (Partida) partidaDAO.findPartida( sociopartida.getSociopartidaPK().getCdPartida() ));
+		punicaopartida.setPartida( (Partida) partidaDAO.findPartida( punicaopartida.getPunicaopartidaPK().getCdPartida() ));
 		
-		TimecamisaDAO timecamisaDAO = DAOFactory.getTimecamisaDAO();
 		try {
-			Timecamisa timeA = timecamisaDAO.findTimecamisa( Timecamisa.TIME_CAMISA_A );
-			Timecamisa timeB = timecamisaDAO.findTimecamisa( Timecamisa.TIME_CAMISA_B );
-			request.getSession().setAttribute(Constantes.SESSION_NMTIMEA, timeA.getNmTime());
-			request.getSession().setAttribute(Constantes.SESSION_NMTIMEB, timeB.getNmTime());
-			List socios = sociopartidaDAO.findAllJogodoresTimes( sociopartida );
-			sociopartidaForm.setNuJogadores( socios.size() );
-			sociopartidaForm.setRows( socios );
+			List<Punicaopartida> socios = punicaopartidaDAO.findAllJogodoresPartida( punicaopartida.getPunicaopartidaPK().getCdPartida() );
+			punicaopartidaForm.setNuJogadores( socios.size() );
+			punicaopartidaForm.setRows( socios );
 		} catch (Exception e) {
 			e.printStackTrace();
-		}*/
+		}
 		return mapping.findForward(FWD_CADASTRAR);
 	}	
 	
@@ -44,50 +54,22 @@ public class PunicaopartidaAction extends PfcAction {
 	public ActionForward salvarCadMultaPartida(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response)
 			throws Exception {
-		/*
 		ActionMessages messages = new ActionMessages();
-		SociopartidaForm sociopartidaForm = (SociopartidaForm) form;
-		Sociopartida sociopartida = (Sociopartida) sociopartidaForm.getEntidade();
-		SociopartidaDAO sociopartidaDAO = DAOFactory.getSociopartidaDAO();
-		PartidaDAO partidaDAO = DAOFactory.getPartidaDAO();
-		
-		Integer nuGolsTimeA = 0;
-		Integer nuGolsTimeB = 0;		
-		Collection jogos = sociopartidaForm.getJogos().values();
-		Iterator it = jogos.iterator();		
+		PunicaopartidaForm punicaopartidaForm = (PunicaopartidaForm) form;
+		Punicaopartida punicaopartida = (Punicaopartida) punicaopartidaForm.getEntidade();
+				
+		Collection multas = punicaopartidaForm.getMultas().values();
+		Iterator it = multas.iterator();		
 		try {
+			List<Punicaopartida> punicoes = new ArrayList<Punicaopartida>();
 		    while (it.hasNext()) {		    	
-		    	Sociopartida sp = (Sociopartida) it.next();
-		    	sp.getSociopartidaPK().setCdPartida( sociopartida.getSociopartidaPK().getCdPartida() );
-		    	if (sp.getCdTime() == 0) {
-		    		sociopartidaDAO.delete(sp);
-		    	} else {
-		    		sociopartidaDAO.delete(sp);
-		    		sociopartidaDAO.insert(sp);
-		    		if (sp.getCdTime() == 1 && sp.getNuGol() > 0) {
-		    			nuGolsTimeA += sp.getNuGol();
-		    		} else if (sp.getCdTime() == 2 && sp.getNuGol() > 0) {
-		    			nuGolsTimeB += sp.getNuGol();
-		    		}
-		    		
-		    		if (sp.getCdTime() == 1 && sp.getNuGolcontra() > 0) {
-		    			nuGolsTimeB += sp.getNuGolcontra();
-		    		}
-		    		if (sp.getCdTime() == 2 && sp.getNuGolcontra() > 0) {
-		    			nuGolsTimeA += sp.getNuGolcontra();
-		    		}
-		    	}
+		    	Punicaopartida pp = (Punicaopartida) it.next();
+		    	pp.getPunicaopartidaPK().setCdPartida( punicaopartida.getPunicaopartidaPK().getCdPartida() );
+		    	punicoes.add(pp);
 		    }
-		    Integer cdTimeVencedor = 1;
-		    Integer nuGolsVencedor = nuGolsTimeA;
-		    Integer nuGolsPerdedor = nuGolsTimeB;
-		    if (nuGolsTimeA < nuGolsTimeB) {
-		    	cdTimeVencedor = 2;
-			    nuGolsVencedor = nuGolsTimeB;
-			    nuGolsPerdedor = nuGolsTimeA;
-		    }
-		    partidaDAO.atualizaResultado(sociopartida.getSociopartidaPK().getCdPartida(), 
-		    		cdTimeVencedor, nuGolsVencedor, nuGolsPerdedor);	
+		    
+		    PunicaopartidaDAO dao= DAOFactory.getPunicaopartidaDAO();
+		    dao.salvaPunicoes(punicoes);
 		    messages.add(Constantes.TIPO_MENSAGEM_SUCESSO, new ActionMessage("msg.sucesso.salvar.registro"));
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -96,7 +78,7 @@ public class PunicaopartidaAction extends PfcAction {
 			if (!messages.isEmpty()) {
 				saveMessages(request, messages);				
 	        }			
-		}*/
+		}
 		return abrirCadMultaPartida(mapping, form, request, response);
 	}	
 	

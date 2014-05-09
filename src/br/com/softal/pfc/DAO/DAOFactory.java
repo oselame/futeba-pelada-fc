@@ -21,7 +21,7 @@ public class DAOFactory {
 				return (DAO) daoCache.get( name );
 				
 			} else {
-				String className = rb.getString( name );
+				String className = rb.getString( name ).trim();
 				Object dao = loader.loadClass( className ).newInstance();
 				daoCache.put( name, dao );
 				return (DAO) dao;
@@ -50,6 +50,10 @@ public class DAOFactory {
 
 	public static SociopartidaDAO getSociopartidaDAO() {
 		return (SociopartidaDAO) getDAO("SociopartidaDAO");
+	}
+	
+	public static PunicaopartidaDAO getPunicaopartidaDAO() {
+		return (PunicaopartidaDAO) getDAO("PunicaopartidaDAO");
 	}
 	
 	public static TimecamisaDAO getTimecamisaDAO() {

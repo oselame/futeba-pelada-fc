@@ -15,6 +15,7 @@ public class PunicaopartidaForm extends PfcForm {
 	
 	@SuppressWarnings("unchecked")
 	private Map multas;
+	private Integer nuJogadores;
 	
 	@SuppressWarnings("unchecked")
 	public PunicaopartidaForm() {
@@ -36,7 +37,7 @@ public class PunicaopartidaForm extends PfcForm {
 	public Object getRow(int index) {
         Object item = getMultas().get(new Integer(index));
         if (item == null) {
-            item = new Sociopartida();
+            item = new Punicaopartida();
             getMultas().put(index, item);
         }
         return item;
@@ -58,4 +59,12 @@ public class PunicaopartidaForm extends PfcForm {
     	*/
     }
 
+	public Integer getNuJogadores() {
+		return nuJogadores;
+	}
+
+	public void setNuJogadores(Integer nuJogadores) {
+		this.nuJogadores = nuJogadores;
+	}
+    
 }

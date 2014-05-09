@@ -150,8 +150,7 @@ public class RdbSociopartidaDAO implements SociopartidaDAO {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public List findAllJogodoresTimes(Object obj) throws DAOException {
-		Sociopartida sociopartida = (Sociopartida) obj; 
+	public List findAllJogodoresTimes(Integer cdPartida) throws DAOException {
 		List lista = new ArrayList();
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -163,7 +162,7 @@ public class RdbSociopartidaDAO implements SociopartidaDAO {
 			sql.append(" from epfcsocio S \n");
 			sql.append(" left join epfcsociopartida SP on \n");
 			sql.append("     SP.cdsocio = S.cdsocio \n");
-			sql.append("     and SP.cdpartida = " + sociopartida.getSociopartidaPK().getCdPartida());
+			sql.append("     and SP.cdpartida = " + cdPartida);
 			sql.append(" left join epfcpartida P on \n");
 			sql.append("     P.cdpartida = SP.cdpartida \n");
 			sql.append(" left join epfctimecamisa TC on \n");
@@ -174,7 +173,7 @@ public class RdbSociopartidaDAO implements SociopartidaDAO {
 			pstmt = con.prepareStatement( sql.toString() );
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
-				sociopartida = popule(rs);
+				Sociopartida sociopartida = popule(rs);
 				sociopartida.setSocio( RdbSocioDAO.popule(rs) );
 				sociopartida.setPartida( RdbPartidaDAO.popule(rs) );
 				sociopartida.setTimecamisa( RdbTimecamisaDAO.popule(rs) );

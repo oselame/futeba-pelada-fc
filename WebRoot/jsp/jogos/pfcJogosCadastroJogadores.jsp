@@ -12,7 +12,9 @@
 <html:form action="/salvarCadSocioPartida.do" >
 
 	<p>
-		<a href="editarCadPartida.do?cdPartida=${sociopartidaForm.entidade.sociopartidaPK.cdPartida}">Cadastro de Jogos</a> | <strong>Jogadores</strong>
+		<a href="editarCadPartida.do?cdPartida=${sociopartidaForm.entidade.sociopartidaPK.cdPartida}">Cadastro de Jogos</a> 
+		| <strong>Jogadores</strong>
+		| <a href="abrirCadMultaPartida.do?cdPartida=${partidaForm.entidade.partidaPK.cdPartida}">Punições</a>
 	</p>
 	
 	<table width="100%" border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">

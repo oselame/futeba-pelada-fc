@@ -49,6 +49,7 @@
 			<logic:equal name="TIPOUSUARIO" value="1">
 				<logic:notEqual name="partidaForm" property="entidade.status" value="I">
 					| <a href="abrirCadSocioPartida.do?cdPartida=${partidaForm.entidade.partidaPK.cdPartida}">Jogadores</a>
+					| <a href="abrirCadMultaPartida.do?cdPartida=${partidaForm.entidade.partidaPK.cdPartida}">Punições</a>
 				</logic:notEqual>
 			</logic:equal>
 		</logic:equal>	

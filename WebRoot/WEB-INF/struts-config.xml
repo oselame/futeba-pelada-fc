@@ -227,17 +227,17 @@
 <!-- MULTA PARTIDA -->	
 	<action
 		path="/abrirCadMultaPartida"
-		name="punicaopartida"		
+		name="punicaopartidaForm"		
 		type="br.com.softal.pfc.struts.action.PunicaopartidaAction"
 		validate="false">
-		<forward name="cadastrar" path="jogos.cadastrasocio"/>
+		<forward name="cadastrar" path="jogos.cadastropunicao"/>
 	</action>	
 	<action
 		path="/salvarCadMultaPartida"
-		name="punicaopartida"		
+		name="punicaopartidaForm"		
 		type="br.com.softal.pfc.struts.action.PunicaopartidaAction"
 		validate="false">
-		<forward name="cadastrar" path="jogos.cadastrasocio"/>
+		<forward name="cadastrar" path="jogos.cadastropunicao"/>
 	</action>
 	
 <!-- Ranking -->	
