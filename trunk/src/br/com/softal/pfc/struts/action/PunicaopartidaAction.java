@@ -17,11 +17,9 @@ import org.apache.struts.action.ActionMessages;
 import br.com.softal.pfc.Constantes;
 import br.com.softal.pfc.Partida;
 import br.com.softal.pfc.Punicaopartida;
-import br.com.softal.pfc.Sociopartida;
 import br.com.softal.pfc.DAO.DAOFactory;
 import br.com.softal.pfc.DAO.PartidaDAO;
 import br.com.softal.pfc.DAO.PunicaopartidaDAO;
-import br.com.softal.pfc.DAO.SociopartidaDAO;
  
 public class PunicaopartidaAction extends PfcAction {
 
@@ -34,6 +32,8 @@ public class PunicaopartidaAction extends PfcAction {
 			Integer cdPartida = Integer.valueOf(request.getParameter("cdPartida"));
 			punicaopartida.getPunicaopartidaPK().setCdPartida( cdPartida );
 		}
+		
+		System.out.println("cdPartida: " + punicaopartida.getPunicaopartidaPK().getCdPartida());
 		
 		PunicaopartidaDAO punicaopartidaDAO = DAOFactory.getPunicaopartidaDAO();
 		
