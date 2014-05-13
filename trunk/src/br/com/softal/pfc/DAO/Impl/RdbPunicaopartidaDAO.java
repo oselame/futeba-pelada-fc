@@ -44,7 +44,7 @@ public class RdbPunicaopartidaDAO implements PunicaopartidaDAO {
 		try {
 			con = ServiceLocator.getConexao();
 			StringBuilder sql = new StringBuilder();
-			sql.append(" insert into epfcpunicaopartida (cdSocio, cdPartida, nuPontospunicao, dePunicao)  ");
+			sql.append(" insert into epfcpunicaopartida (cdsocio, cdpartida, nupontospunicao, depunicao)  ");
 			sql.append(" values (?, ?, ?, ?)  ");
 			pstmt = con.prepareStatement( sql.toString() );
 			int posi = 1;
@@ -67,7 +67,7 @@ public class RdbPunicaopartidaDAO implements PunicaopartidaDAO {
 	
 	private void removeTodasAsPunicoesDaPartida(Integer cdPartida) throws DAOException {
 		StringBuilder sql = new StringBuilder();
-		sql.append("delete from epfcpunicaopartida where cdPartida = ?  \n");
+		sql.append("delete from epfcpunicaopartida where cdpartida = ?  \n");
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		try {
@@ -100,19 +100,19 @@ public class RdbPunicaopartidaDAO implements PunicaopartidaDAO {
 			con = ServiceLocator.getConexao();
 			StringBuilder sql = new StringBuilder();
 			
-			sql.append("select S.cdSocio,                                 \n");
-			sql.append("       S.nmApelido,                               \n");
-			sql.append("       P.cdPartida,                               \n");
-			sql.append("       pp.nuPontospunicao,                        \n");
-			sql.append("       pp.dePunicao                               \n");
-			sql.append("from epfcsocio S                                  \n");
+			sql.append("select s.cdsocio,                                 \n");
+			sql.append("       s.nmapelido,                               \n");
+			sql.append("       p.cdpartida,                               \n");
+			sql.append("       pp.nupontospunicao,                        \n");
+			sql.append("       pp.depunicao                               \n");
+			sql.append("from epfcsocio s                                  \n");
 			sql.append("left join epfcpunicaopartida pp on                \n");
 			sql.append("     pp.cdsocio = s.cdsocio                       \n");
-			sql.append("left join epfcPartida P on                        \n");
-			sql.append("     P.cdPartida = PP.cdPartida                   \n");
-			sql.append("     and P.cdpartida = ?                          \n");
-			sql.append("where (S.flForauso is null or S.flForauso = 0)    \n");
-			sql.append("order by S.nmApelido                              \n");
+			sql.append("left join epfcpartida p on                        \n");
+			sql.append("     p.cdpartida = pp.cdpartida                   \n");
+			sql.append("     and p.cdpartida = ?                          \n");
+			sql.append("where (s.flforauso is null or s.flforauso = 0)    \n");
+			sql.append("order by s.nmapelido                              \n");
 		
 			pstmt = con.prepareStatement( sql.toString() );
 			pstmt.setInt(1, cdPartida);
@@ -155,15 +155,15 @@ public class RdbPunicaopartidaDAO implements PunicaopartidaDAO {
 			con = ServiceLocator.getConexao();
 			StringBuilder sql = new StringBuilder();
 			
-			sql.append("select s.cdSocio,             \n");
-			sql.append("       s.nmApelido,           \n");
-			sql.append("       pp.nuPontospunicao,    \n");
-			sql.append("       pp.dePunicao           \n");
+			sql.append("select s.cdsocio,             \n");
+			sql.append("       s.nmapelido,           \n");
+			sql.append("       pp.nupontospunicao,    \n");
+			sql.append("       pp.depunicao           \n");
 			sql.append("from epfcpunicaopartida pp    \n");
 			sql.append("join epfcsocio s on           \n");
-			sql.append("     pp.cdSocio = s.cdSocio   \n");
-			sql.append("where pp.cdPartida = ?        \n");
-			sql.append("order by s.nmApelido          \n");
+			sql.append("     pp.cdsocio = s.cdsocio   \n");
+			sql.append("where pp.cdpartida = ?        \n");
+			sql.append("order by s.nmapelido          \n");
 		
 			pstmt = con.prepareStatement( sql.toString() );
 			pstmt.setInt(1, cdPartida);
