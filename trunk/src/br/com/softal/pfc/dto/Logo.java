@@ -1,6 +1,8 @@
 package br.com.softal.pfc.dto;
 
-public class Logo {
+import java.io.Serializable;
+
+public class Logo implements Serializable {
 	private String nmLogo;
 	private String deCaminho;
 	private String nmLink;
