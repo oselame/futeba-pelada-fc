@@ -124,6 +124,7 @@ public class RdbPunicaopartidaDAO implements PunicaopartidaDAO {
 				lista.add( sociopartida );
 			}
 		} catch (Exception e) {
+			System.out.println("Erro no metodo findAllJogodoresPartida");
 			e.printStackTrace();
 		} finally {
 			try { RdbUtil.close(rs, pstmt, con); } catch (SQLException e) {}
@@ -175,6 +176,7 @@ public class RdbPunicaopartidaDAO implements PunicaopartidaDAO {
 				lista.add( sociopartida );
 			}
 		} catch (Exception e) {
+			System.out.println("Erro no metodo findAllPunicoesPartida");
 			e.printStackTrace();
 		} finally {
 			try { RdbUtil.close(rs, pstmt, con); } catch (SQLException e) {}
