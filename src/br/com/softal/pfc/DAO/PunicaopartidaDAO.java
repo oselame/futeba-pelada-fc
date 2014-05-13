@@ -11,5 +11,6 @@ public interface PunicaopartidaDAO extends DAO {
 	public List<Punicaopartida> findAllJogodoresPartida(Integer cdPartida) throws DAOException;
 	public void salvaPunicoes(List<Punicaopartida> punicoes) throws DAOException;
 	public Map<Integer, Punicaopartida> findAllMapJogodoresPartida(Integer cdPartida) throws DAOException;
+	List<Punicaopartida> findAllPunicoesPartida(Integer cdPartida) throws DAOException;
 	
 }

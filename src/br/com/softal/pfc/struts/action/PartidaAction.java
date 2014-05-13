@@ -16,6 +16,7 @@ import br.com.softal.pfc.Codigodescricao;
 import br.com.softal.pfc.Constantes;
 import br.com.softal.pfc.Partida;
 import br.com.softal.pfc.PfcBusinessDelegate;
+import br.com.softal.pfc.Punicaopartida;
 import br.com.softal.pfc.Quadrimestre;
 import br.com.softal.pfc.Sociopartida;
 import br.com.softal.pfc.Timecamisa;
@@ -34,6 +35,14 @@ import br.com.softal.pfc.util.Util;
  
  
 public class PartidaAction extends PfcAction {
+	
+	private void carregaPunicoes(ActionForm form, HttpServletRequest request) throws Exception {
+		PartidaForm partidaForm = (PartidaForm) form;
+		Partida partida = (Partida) partidaForm.getEntidade();
+		
+		List<Punicaopartida> punicoes = DAOFactory.getPunicaopartidaDAO().findAllPunicoesPartida(partida.getPartidaPK().getCdPartida());
+		partidaForm.setPunicoes(punicoes);
+	}
 	
 	@SuppressWarnings("unchecked")
 	public ActionForward abrirConJogosShow(ActionMapping mapping, ActionForm form,
@@ -58,6 +67,8 @@ public class PartidaAction extends PfcAction {
 		partida.setSociosPartida( lista );
 		
 		configuraTela(request);
+		
+		this.carregaPunicoes(partidaForm, request);
 		
 		return mapping.findForward("showJogo");
 	}
