@@ -204,7 +204,8 @@
 					<td><img src="/imagens/espacador.gif" height="1px">&nbsp;<br><br></td>
 					<td><img src="/imagens/espacador.gif" height="1px"></td>
 					<td><img src="/imagens/espacador.gif" height="1px"></td>
-				</tr> 	   					
+				</tr> 	
+				<logic:notEmpty name="partidaForm" property="entidade.deObservacao" >   					
 				<tr>
 					<td colspan="3">
 						<b>Observação</b>
@@ -214,7 +215,38 @@
 					<td colspan="3">
 						<bean:write name="partidaForm" property="entidade.deObservacao" />
 					</td>
-				</tr>   		
+				</tr>   
+				<tr>
+					<td colspan="3">
+						&nbsp;
+					</td>
+				</tr>	
+				</logic:notEmpty>	
+				<logic:notEmpty name="partidaForm" property="punicoes" >
+					<tr>
+						<td colspan="3">
+							<b>Punições</b>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3">
+							<table width="100%"  border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+							<tr bgcolor="#efefef">
+								<td width="200px">Apelido</td>
+								<td width="120px">Pontos</td>
+								<td>Porquê</td>
+							</tr>
+							<logic:iterate name="partidaForm" property="punicoes" id="punicao">
+								<tr>
+									<td bgcolor="#FFFFFF">${punicao.socio.nmApelido}</td>
+									<td bgcolor="#FFFFFF">${punicao.nuPontospunicao}</td>
+									<td bgcolor="#FFFFFF">${punicao.dePunicao}</td>
+								</tr>
+							</logic:iterate>
+							</table>
+						</td>
+					</tr>  
+				</logic:notEmpty> 		
 		</table>
  </form>
 <p align="right">

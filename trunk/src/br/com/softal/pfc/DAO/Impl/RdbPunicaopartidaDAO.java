@@ -146,4 +146,40 @@ public class RdbPunicaopartidaDAO implements PunicaopartidaDAO {
 		}
 	}
 	
+	public List<Punicaopartida> findAllPunicoesPartida(Integer cdPartida) {
+		List<Punicaopartida> lista = new ArrayList<Punicaopartida>();
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			con = ServiceLocator.getConexao();
+			StringBuilder sql = new StringBuilder();
+			
+			sql.append("select S.cdSocio,             \n");
+			sql.append("       S.nmApelido,           \n");
+			sql.append("       pp.nuPontospunicao,    \n");
+			sql.append("       pp.dePunicao           \n");
+			sql.append("from epfcpunicaopartida pp    \n");
+			sql.append("join epfcsocio S on           \n");
+			sql.append("     pp.cdsocio = s.cdsocio   \n");
+			sql.append("where pp.cdPartida = ?        \n");
+			sql.append("order by S.nmApelido          \n");
+		
+			pstmt = con.prepareStatement( sql.toString() );
+			pstmt.setInt(1, cdPartida);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Punicaopartida sociopartida = Punicaopartida.popule(rs);
+				sociopartida.setSocio( RdbSocioDAO.popule(rs) );
+				sociopartida.setPartida( RdbPartidaDAO.popule(rs) );
+				lista.add( sociopartida );
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try { RdbUtil.close(rs, pstmt, con); } catch (SQLException e) {}
+		}
+		return lista;
+	}
+	
 }

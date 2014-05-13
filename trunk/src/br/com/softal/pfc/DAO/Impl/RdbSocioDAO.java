@@ -161,8 +161,12 @@ public class RdbSocioDAO implements SocioDAO {
 			int posi = 1;
 			pstmt.setNull(posi++, Types.NULL);
 			pstmt.setString(posi++, socio.getNmSocio());
-			pstmt.setString(posi++, socio.getNmApelido()); 
-			pstmt.setDate(posi++, new java.sql.Date(socio.getDtNascimento().getTime()));
+			pstmt.setString(posi++, socio.getNmApelido());
+			if (socio.getDtNascimento() == null) {
+				pstmt.setNull(posi++, Types.DATE);
+			} else {
+				pstmt.setDate(posi++, new java.sql.Date(socio.getDtNascimento().getTime()));
+			}
 			pstmt.setString(posi++, socio.getNmCidade()); 
 			pstmt.setString(posi++, socio.getSgUf()); 
 			pstmt.setString(posi++, socio.getNmProfissao()); 
