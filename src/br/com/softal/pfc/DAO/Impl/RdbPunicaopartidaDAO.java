@@ -108,9 +108,9 @@ public class RdbPunicaopartidaDAO implements PunicaopartidaDAO {
 			sql.append("from epfcsocio s                                  \n");
 			sql.append("left join epfcpunicaopartida pp on                \n");
 			sql.append("     pp.cdsocio = s.cdsocio                       \n");
+			sql.append("     and pp.cdpartida = ?                         \n");
 			sql.append("left join epfcpartida p on                        \n");
 			sql.append("     p.cdpartida = pp.cdpartida                   \n");
-			sql.append("     and p.cdpartida = ?                          \n");
 			sql.append("where (s.flforauso is null or s.flforauso = 0)    \n");
 			sql.append("order by s.nmapelido                              \n");
 		
