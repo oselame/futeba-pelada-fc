@@ -21,7 +21,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class ItextUtil extends PdfPageEventHelper {
 	
 	protected Document document;
-	protected static String logo;
+	protected String logo;
 	
 	public Document getInstance() {
 		if (document == null) {
@@ -152,7 +152,7 @@ public class ItextUtil extends PdfPageEventHelper {
 		footTable.getDefaultCell().setHorizontalAlignment(Element.ALIGN_LEFT);
 		//the following line will add a cell to the table with value "Signature1"
 		//notice fontStyleFooters? that is the font that we created in the beginning of this method
-		footTable.addCell(new Phrase("Diversão antistress", fontStyleFooters));
+		footTable.addCell(new Phrase("Diversï¿½o antistress", fontStyleFooters));
 		//this cell will be blank. Yes! we can directly type in a string too above, but in order to
 		//use special fonts for special cell values, we are using a Phrase above
 		footTable.addCell(" ");
