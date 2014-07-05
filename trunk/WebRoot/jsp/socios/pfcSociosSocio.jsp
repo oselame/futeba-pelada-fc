@@ -216,7 +216,7 @@
 					</tr>
 					<tr>
 						<td width="120" align="right">
-							<tag:label label="Profissão" styleId="Empresa"  />
+							<tag:label label="Empresa" styleId="Empresa"  />
 						</td>
 						<td>
 							<tag:Text name="socioForm" property="entidade.nmEmpresa" style="width:200" 
@@ -326,11 +326,11 @@
 			var lnAdmin = document.getElementById("lnAdministrador");
 			var lnSenha = document.getElementById("lnSenha");
 			var spandtNascimentostring = document.getElementById("spandtNascimentostring");
-			spandtNascimentostring.style.display="";
+			spandtNascimentostring.style.display="none";
 			if (valor == 3) {
-				if (valor == 3) {
+				/*if (valor == 3) {
 			 		spandtNascimentostring.style.display="none";
-			 	}
+			 	}*/
 				lnAdmin.style.display="none";
 				lnSenha.style.display="none";
 			} else {
@@ -363,11 +363,11 @@
 				document.socioForm["entidade.tpSocio"].focus();
 				return false;
 			} else if (document.socioForm["entidade.tpSocio"].value != "3") {
-				if (document.socioForm["entidade.dtNascimentostring"].value == "") {
+				/*if (document.socioForm["entidade.dtNascimentostring"].value == "") {
 					alert("Campo 'Data nascimento' não informado!");
 					document.socioForm["entidade.dtNascimentostring"].focus();
 					return false;
-				}
+				}*/
 			}
 		}
 

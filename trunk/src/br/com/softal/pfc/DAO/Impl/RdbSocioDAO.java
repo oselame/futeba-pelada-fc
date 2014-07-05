@@ -85,7 +85,8 @@ public class RdbSocioDAO implements SocioDAO {
 			con = ServiceLocator.getConexao();
 			StringBuilder sql = new StringBuilder();
 			sql.append(" select * from epfcsocio ");
-			sql.append(" where YEAR(dtNascimento) > 1900 ");
+			sql.append(" where dtNascimento is not null ");
+			sql.append(" and YEAR(dtNascimento) > 1900 ");
 			sql.append(" and MONTH(dtNascimento) = ? ");
 			sql.append(" order by MONTH(dtNascimento) asc, DAY(dtNascimento) asc ");
 			pstmt = con.prepareStatement( sql.toString() );
@@ -113,10 +114,11 @@ public class RdbSocioDAO implements SocioDAO {
 			con = ServiceLocator.getConexao();
 			StringBuilder sql = new StringBuilder();
 			sql.append(" select * from epfcsocio ");
-			sql.append(" where YEAR(dtNascimento) > 1900 ");
+			sql.append(" where dtNascimento is not null ");
+			sql.append(" and (YEAR(dtNascimento) > 1900 ");
 			sql.append(" and ((MONTH(dtNascimento) = ? ");
 			sql.append(" AND DAY(dtNascimento) >= ?)"); 
-			sql.append(" or MONTH(dtNascimento) > ?) ");
+			sql.append(" or MONTH(dtNascimento) > ?)) ");
 			
 			sql.append(" and (flForauso is null or flForauso = 0) ");	
 			if (tiposocio != null) {
