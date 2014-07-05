@@ -1,8 +1,8 @@
 <!-- pfcSociosInicio.jsp -->
 <%@ include file="/pfcInclude.jsp"%>
-<p>
-	<strong>Lista de s&oacute;cios </strong>
-</p>
+
+<h1>Lista de s&oacute;cios</h1>
+
 <script type="text/javascript">
 <!--
 	function dadosSocio(cdsocio) {
@@ -11,9 +11,17 @@
 	}
 //-->
 </script>
+	<p align="right">
+		<logic:equal name="USUARIOLOGADO" value="true">
+			<logic:equal name="TIPOUSUARIO" value="1">
+				<html:button value="Novo" property="bntNovo" styleClass="bN" onclick="location.href='abrirCadSocio.do'" />
+			</logic:equal>
+		</logic:equal>
+	</p>
+
 	<!-- Socios Patrimonial -->	
 	<table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC">
-	<tbody><thead>Patrimônial</thead></tbody>
+	<tbody><thead><h3>Patrimônial</h3></thead></tbody>
 	<tr bgcolor="#efefef">
 		<td width="25">
 			&nbsp;
@@ -76,7 +84,7 @@
 
 	<!-- Socios Preferencial -->	
 	<table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC">
-	<tbody><thead>Preferêncial</thead></tbody>
+	<tbody><thead><h3>Preferêncial</h3></thead></tbody>
 	<tr bgcolor="#efefef">
 		<td width="25">
 			&nbsp;
@@ -139,7 +147,7 @@
 	
 	<!-- Socios Benemérito -->	
 	<table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC">
-	<tbody><thead>Benemérito</thead></tbody>
+	<tbody><thead><h3>Benemérito</h3></thead></tbody>
 	<tr bgcolor="#efefef">
 		<td width="25">
 			&nbsp;
@@ -202,7 +210,7 @@
 	
 	<!-- Socios Avulsos -->	
 	<table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC">
-	<tbody><thead>Avulso</thead></tbody>
+	<tbody><thead><h3>Avulso</h3></thead></tbody>
 	<tr bgcolor="#efefef">
 		<td width="25">
 			&nbsp;
@@ -266,7 +274,7 @@
 	<br>
 		<!-- Socios Fora de Uso -->	
 		<table width="100%" border="0" cellpadding="1" cellspacing="1" bgcolor="#CCCCCC">
-		<tbody><thead>Desligados</thead></tbody>
+		<tbody><thead><h3>Desligados</h3></thead></tbody>
 		<tr bgcolor="#efefef">
 			<td width="25">
 				&nbsp;

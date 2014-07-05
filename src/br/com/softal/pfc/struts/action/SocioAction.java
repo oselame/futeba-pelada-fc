@@ -137,7 +137,7 @@ public class SocioAction extends PfcAction {
 			Socio socio = (Socio) socioForm.getEntidade();
 			socio.setTpSocio( 3 );
 			socio.setSgUf("SC");
-			socio.setNuTrabalho(null);
+			socio.setNuTrabalho( " " );
 			socioForm.getEntidade().setStatusInsert();	
 		} catch (Exception e) {
 			e.printStackTrace();

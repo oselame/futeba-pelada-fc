@@ -21,7 +21,7 @@
 
 <c:if test="${not empty label}">
 	<span style="font-weight: bold;text-align: ${align};">
-		<label for="${styleId}">${label}<c:if test="${not empty obrigatorio}"><span id="span${styleId}">*</span></c:if><c:if test="${not oculta2pontos}">:</c:if></label>
+		<label for="${styleId}">${label}<c:if test="${not empty obrigatorio && obrigatorio eq true}"><span id="span${styleId}">*</span></c:if><c:if test="${not oculta2pontos}">:</c:if></label>
 	</span>
 </c:if>
 <c:if test="${empty label}">
