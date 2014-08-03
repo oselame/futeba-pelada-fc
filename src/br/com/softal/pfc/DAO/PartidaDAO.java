@@ -23,4 +23,6 @@ public interface PartidaDAO extends DAO {
 	public Partida findPartidaanterior(Integer cdPartida) throws DAOException;
 	public void encerrarPartida(Partida partida) throws DAOException;
 	
+	
+	
 }

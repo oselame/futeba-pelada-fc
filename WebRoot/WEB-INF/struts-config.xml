@@ -205,6 +205,21 @@
 		validate="false">
 		<forward name="cadastrar" path="jogos.cadastra"/>
 	</action>
+	
+	<action
+		path="/reabrirPartidasate"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastra"/>
+	</action>
+	<action
+		path="/encerrarPartidasate"
+		name="partidaForm"		
+		type="br.com.softal.pfc.struts.action.PartidaAction"
+		validate="false">
+		<forward name="cadastrar" path="jogos.cadastra"/>
+	</action>
 		
 	<!-- action forward="/jogos/quadrimestre.do" path="/abrirConJogosQuadrimestre.do" / -->
 	
