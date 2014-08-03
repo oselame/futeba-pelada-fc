@@ -31,6 +31,8 @@ import br.com.softal.pfc.config.PfcConfig;
 import br.com.softal.pfc.dto.EmailAtrasoDto;
 import br.com.softal.pfc.email.SendEmail2;
 import br.com.softal.pfc.exception.QuadrimestreException;
+import br.com.softal.pfc.service.PeladaService;
+import br.com.softal.pfc.service.PfcServiceLocator;
 import br.com.softal.pfc.util.Util;
  
  
@@ -745,6 +747,28 @@ public class PartidaAction extends PfcAction {
 	        }			
 		}
 		return editarCadPartida(mapping, form, request, response);
+	}
+	
+	public ActionForward reabrirPartidasate(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		String cdPartida = request.getParameter("cdPartida");
+		if (cdPartida != null && cdPartida != "") {
+			PfcServiceLocator.getInstance().getPeladaService().reabrirPartidasate( Integer.valueOf(cdPartida) );
+		}		
+		
+		response.sendRedirect("abrirConJogosQuadrimestre.do");
+		return null;
+	}
+	
+	public ActionForward encerrarPartidasate(ActionMapping mapping, ActionForm form,
+			HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String cdPartida = request.getParameter("cdPartida");
+		if (cdPartida != null && cdPartida != "") {
+			PfcServiceLocator.getInstance().getPeladaService().encerrarPartidasate( Integer.valueOf(cdPartida) );
+		}	
+		response.sendRedirect("abrirConJogosQuadrimestre.do");
+		return null;
 	}
 	
 }

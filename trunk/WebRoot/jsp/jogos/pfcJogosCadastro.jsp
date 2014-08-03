@@ -2,6 +2,8 @@
 <%@ include file="/pfcInclude.jsp"%>
 <%@page import="br.com.softal.pfc.Constantes"%>
 <%@ taglib prefix="tag" tagdir="/WEB-INF/tags"%>
+<!-- <script src="//cdn.ckeditor.com/4.4.3/full/ckeditor.js"></script> -->
+<script src="//cdn.ckeditor.com/4.4.3/standard/ckeditor.js"></script>
 
 <html:form action="/salvarCadPartida.do" focus="entidade.dtPartidaformatada">
 	<script>
@@ -165,15 +167,16 @@
 	<table width="100%" border="0" cellpadding="0" cellspacing="1">
 	<tr>
 		<td width="120" align="right"><b>Bola Cheia:</b></td>
-		<td><tag:TextArea name="partidaForm" property="entidade.deBolacheia" rows="3"/></td>
+		<td><tag:TextArea name="partidaForm" property="entidade.deBolacheia" rows="3" styleClass="ckeditor"/></td>
 	</tr>
 	<tr>
 		<td width="120" align="right"><b>Bola Murcha:</b></td>
-		<td><tag:TextArea name="partidaForm" property="entidade.deBolamurcha" rows="3"/></td>
+		<td>
+			<tag:TextArea name="partidaForm" property="entidade.deBolamurcha" rows="3" styleClass="ckeditor"/></td>
 	</tr>
 	<tr>
 		<td width="120" align="right"><b>Observa&ccedil;&atilde;o:</b></td>
-		<td><tag:TextArea name="partidaForm" property="entidade.deObservacao" rows="3"/></td>
+		<td><tag:TextArea name="partidaForm" property="entidade.deObservacao" rows="3" styleClass="ckeditor"/></td>
 	</tr>	
 	</table>
 	<p align="right">

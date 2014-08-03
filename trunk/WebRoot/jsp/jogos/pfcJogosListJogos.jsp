@@ -11,6 +11,18 @@
 		var url = "abrirConJogosShow.do?cdPartida=" + cdPartida;
 		document.location.href=url;
 	}
+	function reabrirPartidasate(cdPartida, dtPartida) {
+		if (confirm('Você deseja reabrir todas as partidas até a data ' + dtPartida + '?')) {
+			var url = "reabrirPartidasate.do?cdPartida=" + cdPartida;
+			document.location.href=url;
+		}
+	}
+	function encerrarPartidasate(cdPartida, dtPartida) {
+		if (confirm('Você deseja encerrar todas as partidas até a data ' + dtPartida + '?')) {
+			var url = "encerrarPartidasate.do?cdPartida=" + cdPartida;
+			document.location.href=url;
+		}
+	}
 </script>
 	<table width="100%"  border="0" cellspacing="0" cellpadding="2">
 		<tag:espacador />
@@ -53,6 +65,12 @@
 				<td width="80" align="center">
 					Status
 				</td>
+				<td width="80" align="center">
+					Reabrir
+				</td>
+				<td width="80" align="center">
+					Encerrar
+				</td>
 			</logic:equal>
 		</logic:equal>
 	</tr>
@@ -84,6 +102,26 @@
 						<logic:notEqual name="row" property="flConcluida" value="1">
 							Aberta
 						</logic:notEqual>					
+					</td>
+					<td width="80" align="center">
+						<logic:equal name="row" property="flConcluida" value="1">
+							<a href="javascript:reabrirPartidasate('${row.partidaPK.cdPartida}', '${row.dtPartidaformatada}')">
+								Reabrir
+							</a>
+						</logic:equal>
+						<logic:notEqual name="row" property="flConcluida" value="1">
+							&nbsp;
+						</logic:notEqual>
+					</td>
+					<td width="80" align="center">
+						<logic:equal name="row" property="flConcluida" value="1">
+							&nbsp;
+						</logic:equal>
+						<logic:notEqual name="row" property="flConcluida" value="1">
+							<a href="javascript:encerrarPartidasate('${row.partidaPK.cdPartida}', '${row.dtPartidaformatada}')">
+								Encerrar
+							</a>
+						</logic:notEqual>						
 					</td>
 				</logic:equal>
 			</logic:equal>
