@@ -162,11 +162,28 @@ public class Classificacao extends Entidade {
 
 	public String getCdAuxiliar() {
 		cdAuxiliar = (
+				/*
 				Util.zeroEsquerda(3, getNuPontos().toString()) + 
 				Util.zeroEsquerda(3, getNuJogos().toString()) + 
 				Util.zeroEsquerda(3, getNuVitorias().toString()) + 
 				Util.zeroEsquerda(3, getNuEmpates().toString()) +				
+				Util.zeroEsquerda(3, String.valueOf(999 - getNuPosicaoanterior()) )
+				*/
+				
+				Util.zeroEsquerda(3, getNuPontos().toString()) + 
+				Util.zeroEsquerda(3, getNuVitorias().toString()) + 
+				Util.zeroEsquerda(3, getNuJogos().toString()) + 
+				Util.zeroEsquerda(3, String.valueOf(999 - getNuPosicaoanterior()) )
+				
+		);
+		/*
+		cdAuxiliar = (
+				Util.zeroEsquerda(3, getNuPontos().toString()) + 
+				Util.zeroEsquerda(3, getNuVitorias().toString()) + 
+				Util.zeroEsquerda(3, getNuJogos().toString()) + 
+				Util.zeroEsquerda(3, getNuEmpates().toString()) +				
 				Util.zeroEsquerda(3, String.valueOf(999 - getNuPosicaoanterior()) ));
+		*/
 		return cdAuxiliar;
 	}
 
