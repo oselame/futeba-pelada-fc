@@ -157,8 +157,8 @@ public class RdbSocioDAO implements SocioDAO {
 		try {
 			con = ServiceLocator.getConexao();
 			StringBuilder sql = new StringBuilder();
-			sql.append(" insert into epfcsocio (cdsocio, nmsocio, nmapelido, dtnascimento, nmcidade, sguf, nmprofissao, nmempresa, nmtime, nucelular, nucasa, nutrabalho, deemail, flforauso, flAdministrador, deSenha, tpSocio, imfoto)  ");
-			sql.append(" values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  ");
+			sql.append(" insert into epfcsocio (cdsocio, nmsocio, nmapelido, dtnascimento, nmcidade, sguf, nmprofissao, nmempresa, nmtime, nucelular, nucasa, nutrabalho, deemail, flforauso, flAdministrador, deSenha, tpSocio, nuordem, imfoto)  ");
+			sql.append(" values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  ");
 			pstmt = con.prepareStatement( sql.toString() );
 			int posi = 1;
 			pstmt.setNull(posi++, Types.NULL);
@@ -182,6 +182,7 @@ public class RdbSocioDAO implements SocioDAO {
 			pstmt.setInt(posi++, socio.getFlAdministrador());
 			pstmt.setString(posi++, socio.getDeSenha());
 			pstmt.setInt(posi++, socio.getTpSocio());
+			pstmt.setInt(posi++, socio.getNuOrdem());
 			pstmt.setBytes(posi++, socio.getImFoto());			
 			pstmt.executeUpdate();
 			socio.getSocioPK().setCdSocio( getCodigoGerado( con ) );
@@ -238,7 +239,8 @@ public class RdbSocioDAO implements SocioDAO {
 			sql.append("     flForauso = ?, ");
 			sql.append("     flAdministrador = ?, ");
 			sql.append("     deSenha = ?,");
-			sql.append("     tpSocio = ?");			
+			sql.append("     tpSocio = ?,");			
+			sql.append("     nuOrdem = ?");			
 			if (socio.getImFoto() != null && socio.getImFoto().length > 0) {
 				sql.append("     ,imfoto = ? ");
 			}
@@ -265,6 +267,7 @@ public class RdbSocioDAO implements SocioDAO {
 			pstmt.setInt(posi++, socio.getFlAdministrador());
 			pstmt.setString(posi++, socio.getDeSenha());
 			pstmt.setInt(posi++, socio.getTpSocio());
+			pstmt.setInt(posi++, socio.getNuOrdem());
 			if (socio.getImFoto() != null && socio.getImFoto().length > 0) {
 				pstmt.setBytes(posi++, socio.getImFoto());
 			}
@@ -299,6 +302,12 @@ public class RdbSocioDAO implements SocioDAO {
 		try { socio.setFlAdministrador( rs.getInt("flAdministrador") ); } catch (Exception e) {}
 		try { socio.setDeSenha( rs.getString("deSenha") ); } catch (Exception e) {}
 		try { socio.setTpSocio( rs.getInt("tpSocio") ); } catch (Exception e) {}
+		
+		try { 
+			if (rs.getObject("nuOrdem") != null) {
+				socio.setNuOrdem( rs.getInt("nuOrdem") ); 
+			}
+		} catch (Exception e) {}
 		return socio;
 	}
 	

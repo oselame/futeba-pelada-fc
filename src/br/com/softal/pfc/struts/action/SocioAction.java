@@ -3,6 +3,8 @@ package br.com.softal.pfc.struts.action;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.imageio.ImageIO;
@@ -46,6 +48,35 @@ public class SocioAction extends PfcAction {
 					socioForm.getSociosbenemerito().add(s);
 				}
 			}
+			Collections.sort(socioForm.getSociospatrimonial(), new Comparator<Socio>() {
+				public int compare(Socio o1, Socio o2) {
+					return o1.getNmApelido().compareToIgnoreCase(o2.getNmApelido());
+				}
+			});
+			Collections.sort(socioForm.getSociospreferencial(), new Comparator<Socio>() {
+				public int compare(Socio o1, Socio o2) {
+					if ((o1.getNuOrdem() == null) || (o2.getNuOrdem() == null)) {
+						return o1.getNmApelido().compareToIgnoreCase(o2.getNmApelido());
+					}
+					return o1.getNuOrdem().compareTo(o2.getNuOrdem());
+				}
+			});
+			Collections.sort(socioForm.getSociosbenemerito(), new Comparator<Socio>() {
+				public int compare(Socio o1, Socio o2) {
+					return o1.getNmApelido().compareToIgnoreCase(o2.getNmApelido());
+				}
+			});
+			Collections.sort(socioForm.getSociosavulso(), new Comparator<Socio>() {
+				public int compare(Socio o1, Socio o2) {
+					return o1.getNmApelido().compareToIgnoreCase(o2.getNmApelido());
+				}
+			});
+			Collections.sort(socioForm.getSociosforauso(), new Comparator<Socio>() {
+				public int compare(Socio o1, Socio o2) {
+					return o1.getNmApelido().compareToIgnoreCase(o2.getNmApelido());
+				}
+			});
+			
 			socioForm.setRows(socios);
 		} catch (Exception e) {
 			e.printStackTrace();

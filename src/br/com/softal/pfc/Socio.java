@@ -29,6 +29,7 @@ public class Socio extends Entidade {
     private Integer flAdministrador;
     private String deSenha;
     private Integer tpSocio;
+    private Integer nuOrdem;
     private byte[] imFoto;
     
     private List<String> permissoes;
@@ -226,9 +227,33 @@ public class Socio extends Entidade {
 		this.className = className;
 	}
 	
+	public Integer getNuOrdem() {
+		return nuOrdem;
+	}
+
+	public void setNuOrdem(Integer nuOrdem) {
+		this.nuOrdem = nuOrdem;
+	}
+
 	@Override
 	public EntidadePK<Socio> getPK() {
 		return getSocioPK();
 	}
+
+	@Override
+	public String toString() {
+		return "Socio [socioPK.cdSocio=" + getSocioPK().getCdSocio() + ", nmSocio=" + nmSocio
+				+ ", nmApelido=" + nmApelido + ", dtNascimento=" + dtNascimento
+				+ ", nmCidade=" + nmCidade + ", sgUf=" + sgUf
+				+ ", nmProfissao=" + nmProfissao + ", nmEmpresa=" + nmEmpresa
+				+ ", nmTime=" + nmTime + ", nuCelular=" + nuCelular
+				+ ", nuCasa=" + nuCasa + ", nuTrabalho=" + nuTrabalho
+				+ ", deEmail=" + deEmail + ", flForauso=" + flForauso
+				+ ", flAdministrador=" + flAdministrador + ", deSenha="
+				+ deSenha + ", tpSocio=" + tpSocio + ", nuOrdem=" + nuOrdem
+				+ ", permissoes=" + permissoes + ", nuMesnascimento="
+				+ nuMesnascimento + "]";
+	}
+	
 	
 }
