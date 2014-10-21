@@ -306,6 +306,16 @@
 							<tag:label label="Fora de Uso" styleId="flForauso" oculta2pontos="true" align="left" /> 
 						</td>
 					</tr>
+					
+					<tr id="lnOrdem">
+						<td width="120" align="right">
+							<tag:label label="Ordem" styleId="nuOrdem" obrigatorio="true" /> 
+						</td>
+						<td>
+							<tag:Text name="socioForm" property="entidade.nuOrdem" style="width:100" 
+								styleId="nuOrdem"/>
+						</td>
+					</tr>
 					</table>
 				</td>
 			</tr>
@@ -322,17 +332,22 @@
 	
 	<script>
 		function mostraTableAdm(valor) {
-			debugger;
+			var lnOrdem = document.getElementById("lnOrdem");
 			var lnAdmin = document.getElementById("lnAdministrador");
 			var lnSenha = document.getElementById("lnSenha");
 			var spandtNascimentostring = document.getElementById("spandtNascimentostring");
 			spandtNascimentostring.style.display="none";
+			lnOrdem.style.display="none";
 			if (valor == 3) {
 				/*if (valor == 3) {
 			 		spandtNascimentostring.style.display="none";
 			 	}*/
 				lnAdmin.style.display="none";
 				lnSenha.style.display="none";
+			} else if (valor == 2) { //-- Preferencial
+				lnSenha.style.display="";
+				lnAdmin.style.display="";
+				lnOrdem.style.display="";
 			} else {
 				lnSenha.style.display="";
 				lnAdmin.style.display="";
@@ -362,6 +377,12 @@
 				alert("Campo 'Tipo Usuário' não informado!");
 				document.socioForm["entidade.tpSocio"].focus();
 				return false;
+			} else if (document.socioForm["entidade.tpSocio"].value == "2") {
+				if (document.socioForm["entidade.nuOrdem"].value == "") {
+					alert("Campo 'Ordem' não informado!");
+					document.socioForm["entidade.nuOrdem"].focus();
+					return false;
+				}
 			} else if (document.socioForm["entidade.tpSocio"].value != "3") {
 				/*if (document.socioForm["entidade.dtNascimentostring"].value == "") {
 					alert("Campo 'Data nascimento' não informado!");
