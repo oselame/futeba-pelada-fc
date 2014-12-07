@@ -1,0 +1,170 @@
+/** Estilo do Form **/
+form {
+    margin: 0px;
+    padding: 0px;
+}
+
+/** Estilo para os links da pagina  **/ 
+a:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;  color: #000066; text-decoration: none
+}
+
+/** Estilo para os links da pagina  **/ 
+a:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;  color: #000066; text-decoration: none
+}
+
+/** Estilo para os links da pagina  **/ 
+a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;  color: #0066CC; text-decoration: none
+}
+
+/** Estilo para o corpo do HTML  **/ 
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px
+}
+
+/** Estilo para um campo INPUT do form  **/ 
+input {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+/** Estilo para o campo SELECT do form  **/ 
+select {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+/** Estilo para tabelas  **/ 
+table {  
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px
+}
+
+/** Estilo para o campo TEXTAREA do form  **/ 
+textarea {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+}
+
+/** Estilo para um botao comum do form **/ 
+.spwBotao {
+	font-size: 10px;
+	background-color: #6699FF;
+	border: 1px solid #0066FF;
+}
+
+/** Estilo para um botao comum do form, com o mouse em cima **/ 
+.spwBotao-o {
+	font-size: 10px;
+	background-color: #33CCFF;
+	border: 1px solid #0099CC;
+}
+
+/** Estilo para um botao default do form **/ 
+.spwBotaoDefault {
+	font-size: 10px;
+	background-color: #FFCC00;
+	border: 1px solid #FF9900;
+}
+
+/** Estilo para um botao default do form, com o mouse em cima **/ 
+.spwBotaoDefault-o {
+	font-size: 10px;
+	background-color: #FFDD00;
+	border: 1px solid #FF9900;
+}
+
+/** Campo do formulrio **/
+.spwCampoTexto {
+
+}
+
+/** Qquer coisa alinhada a direita **/
+.alignRight {
+	text-align: right;
+}
+
+/** Qquer coisa alinhada ao centro **/
+.alignCenter {
+	text-align: center;
+}
+
+/** Qquer coisa desabilitada **/
+.disabled {
+	background-color: #ebebeb;
+}
+
+/** Qquer coisa escondida **/
+.hidden {
+	display:none;
+}
+
+/** Qquer coisa escondida para impressao **/
+.noPrint {
+}
+
+/** layer processando **/
+.processando{
+	position:absolute;
+	height: 40px;
+	width: 200px;
+	background-image: url(../imagens/processando.gif);
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+/** Qquer coisa errada **/
+.erro {
+	color: #ff0000;
+}
+
+.hint {
+	color: #FFFFFF;
+	background-color: #000000;
+	border: 1px solid #FF0000;
+}
+
+/** Opção da mensagem **/
+a.opcaoMensagem:link{
+	font-size: 10px;
+    text-decoration: underline;
+    color:#00AA00;
+}
+
+a.opcaoMensagem:visited{
+	font-size: 10px;
+    text-decoration: underline;
+    color:#00AA00;
+}
+
+a.opcaoMensagem:active{
+	font-size: 10px;
+    text-decoration: underline;
+    color:#00AA00;
+}
+
+a.opcaoMensagem:hover{
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.tabelaMensagem{
+	background-color: #FFFFDD;
+}
+
+.toggle{
+	background-image: url(../imagens/abrirSubTitulo.gif);
+}
+
+.toggle-o{
+	background-image: url(../imagens/abrirSubTitulo-o.gif);
+}
+
+.toggle-c{
+	background-image: url(../imagens/fecharSubTitulo.gif);
+}
+
+.toggle-c-o{
+	background-image: url(../imagens/abrirSubTitulo-o.gif);
+}

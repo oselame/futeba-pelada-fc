@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Class-Path: commons-beanutils-1.7.jar commons-collections.jar commons-digester.jar
+ commons-email-1.1-sources.jar commons-fileupload-1.2.1.jar commons-io-1.3.2.jar
+ commons-lang.jar commons-logging-1.1.1.jar commons-validator.jar dom4j-full.jar
+ dwr.jar fckeditor-java-core-2.4.jar fckeditor-java-core-2.4-javadoc.jar jakarta-oro.jar
+ mail.jar mysql-connector-java-5.1.6-bin.jar slf4j-api-1.5.2.jar struts.jar
+ struts-legacy.jar slf4j-simple-1.5.2.jar slf4j-simple-1.5.2-sources.jar jstl-1.2 
+ ezmorph.jar json-lib-2.2.2-jdk15.jar iText-5.0.4.jar 

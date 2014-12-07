@@ -1,0 +1,261 @@
+a:link {
+	font-family: Verdana, Arial, Helvetica, sans-serif;  color: #009900; text-decoration: none
+}
+a:visited {
+	font-family: Verdana, Arial, Helvetica, sans-serif;  color: #009900; text-decoration: none
+}
+a:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;  color: #FF9900; text-decoration: underline}
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	margin: 0px;
+}
+input {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+select {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+table {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+}
+textarea {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+
+/** propriedades do objetos**/
+
+.aR{
+	text-align: right;
+}
+.aC{
+	text-align: center;
+}
+.d{
+	background-color: #ebebeb;
+}
+.h{
+	display:none;
+}
+.nP1{
+}
+
+/** objetos **/
+
+.bH{
+	border-width:1px;
+	border-color: #274274;
+	background-color: #FFDA0E;
+	border: 1px solid #000000;
+}
+.bN{
+	border-width:1px;
+	border-color: #274274;
+	background-color: #70DA2F;
+	border: 1px solid #000000;
+}
+.bH-o{
+	border-width:1px;
+	border-color: #005252;
+	background-color: #F3F70A;
+	text-autospace: ideograph-space
+		
+}
+.bN-o{
+	border-width:1px;
+	border-color: #005252;
+	background-color: #5CB6F7;
+}
+
+@media print{
+	.bN{
+		display:none;	
+	}
+	.bH{
+		display:none;	
+	}
+	.d{
+		background-color: #FFFFFF;
+	}
+	.h{
+		display:inline;
+	}
+	.nP{
+		display:none;
+	}
+}
+
+.fundo {
+	background-color: #FFFFFF;
+}
+.menuSel {
+	background-color: #3B729F;
+	color: #FFFFFF;
+	text-align: center;
+	height: 19px;
+	font-weight: bold;
+	font-size: 11px;
+
+
+}
+.menuSel-o {
+	background-color: #5CB6F7;
+	color: #FFFFFF;
+	text-align: center;
+	height: 19px;
+	font-weight: bold;
+	font-size: 11px;
+	cursor: hand;
+}
+.titulo {
+	font-size: 14px;
+	font-weight: bold;
+	color: 183C59;
+}
+.titCont {
+	background-image: url(../imagens/fundoTitulo.gif);
+}
+.numPag {
+	padding-right: 5px;
+	padding-left: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.numPagSel {
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: bold;
+	color: #FFFFFF;
+	background-color: #006699;
+}
+.sepPag {
+	width: 5px;
+}
+.produto {
+	font-size: 11px;
+	font-weight: bold;
+	height: 18px;
+	background-color: #FEFEFE;
+}
+.campo {
+	width: 100%;
+}
+.cabTabela {
+	font-weight: bold;
+	background-color: #8AA6BB;
+	height: 18px;
+}
+.cel {
+	border-top-width: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+.celLeft {
+	border-top-width: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+.opiniao{
+	font-style: italic;
+	color: #003366;
+	font-weight: bold;
+}
+.linhaMenu {
+	border-top-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-left-width: 0px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #EFEFEF;
+	border-right-color: #EFEFEF;
+	border-bottom-color: #EFEFEF;
+	border-left-color: #EFEFEF;
+	height: 17px;
+}
+.pastaAtiva{
+	background-color: #CCCCCC;	
+}
+.pastaDesat{
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+}
+.textoRanking{
+	xbackground-image: url(../imagens/rankingFundo.jpg);
+	background: #ffffff
+		url("images/ui-bg_highlight-soft_100_ffffff_1x100.png") 50% top
+		repeat-x;
+}
+
+.pfcCampoTexto { 
+		background-color: #FFFFFF;
+		border-bottom-width: 1px;
+		border-top-width: 1px;
+		border-left-width: 1px;
+		border-right-width: 1px;
+		width: 100%;
+}
+.pfcCampoTextoFocus  { 
+		background-color: #FFFFCC; 
+		border-bottom-width: 1px;
+		border-top-width: 1px;
+		border-left-width: 1px;
+		border-right-width: 1px;
+		width: 100%;
+}
+.erro {
+	color: red;
+}
+
+/** Qquer coisa desabilitada **/
+.disabled {
+	background-color: #ebebeb;
+}
+
+.error {
+	color: red;
+}
+.message {
+	color: green;
+}
+
+.negrito {
+	font-weight: bold;
+	font-size: small;
+}

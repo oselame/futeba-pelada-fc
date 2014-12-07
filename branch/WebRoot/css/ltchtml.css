@@ -1,0 +1,27 @@
+td.lateralFundo {
+	background-image: url("../imagens/lateralFundo.gif")
+}
+td.campoDir {
+	background-image: url("../imagens/campoDir.jpg")
+}
+td.menuFinal {
+	background-image: url("../imagens/menuFinal.jpg")
+}
+td.superiorFundo {
+	background-image: url("../imagens/superiorFundo.gif")
+}
+td.campoFundo2 {
+	background-image: url("../imagens/campoFundo2.jpg")
+}
+table.campoFundo {
+	background-image: url("../imagens/campoFundo.gif")
+}
+table.menuFundo {
+	background-image: url("../imagens/menuFundo.gif")
+}
+table.fundoBanner {
+	background-image: url("../imagens/fundoBanner.gif")
+}
+img.banner{
+	cursor: pointer;
+}
