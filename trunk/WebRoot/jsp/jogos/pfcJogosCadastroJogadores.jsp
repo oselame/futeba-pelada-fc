@@ -242,6 +242,7 @@
 		}
 	
 		function somaTimes() {
+			var nuJogadorportime = parseInt(document.getElementById("nuJogadorportime").value);
 			var oNuJogadores = document.sociopartidaForm["nuJogadores"].value;
 			var oNuJogadorTimeA = 0;
 			var oNuJogadorTimeB = 0;
@@ -258,11 +259,11 @@
 			}
 			document.getElementById("nuJogadorTimeA").value = oNuJogadorTimeA;
 			document.getElementById("nuJogadorTimeB").value = oNuJogadorTimeB;
-			if ((oNuJogadorTimeA == 0) || (oNuJogadorTimeA > 8)) {
+			if ((oNuJogadorTimeA == 0) || (oNuJogadorTimeA > nuJogadorportime)) {
 				alert("Numero de jogadores selecionados para o time ''${nmTimeA}'' é inválido!");
 				return false;
 			}
-			if ((oNuJogadorTimeB == 0) || (oNuJogadorTimeB > 8)) { 
+			if ((oNuJogadorTimeB == 0) || (oNuJogadorTimeB > nuJogadorportime)) { 
 				alert("Numero de jogadores selecionados para o time ''${nmTimeB}'' é inválido!");
 				return false;
 			}
@@ -280,7 +281,7 @@
 			document.getElementById(otpCartao).checked = true;			
 		}
 		
-		function somaJogadoresTimes(index) {
+		function somaJogadoresTimes(index) {			
 			var nuJogadorportime = parseInt(document.getElementById("nuJogadorportime").value);
 			var oNuJogadores = document.sociopartidaForm["nuJogadores"].value;
 			var oNuJogadorTimeA = 0;
