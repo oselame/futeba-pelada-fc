@@ -7,6 +7,9 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -46,9 +49,29 @@ public class SociopartidaAction extends PfcAction {
 			Timecamisa timeB = timecamisaDAO.findTimecamisa( Timecamisa.TIME_CAMISA_B );
 			request.getSession().setAttribute(Constantes.SESSION_NMTIMEA, timeA.getNmTime());
 			request.getSession().setAttribute(Constantes.SESSION_NMTIMEB, timeB.getNmTime());
-			List socios = sociopartidaDAO.findAllJogodoresTimes( sociopartida.getSociopartidaPK().getCdPartida() );
+			List<Sociopartida> socios = sociopartidaDAO.findAllJogodoresTimes( sociopartida.getSociopartidaPK().getCdPartida() );
 			sociopartidaForm.setNuJogadores( socios.size() );
 			sociopartidaForm.setRows( socios );
+			
+			JSONArray arr = new JSONArray();
+			for (Sociopartida sp : socios) {
+				JSONObject obj = new JSONObject();
+				JSONObject objPK = new JSONObject();
+				objPK.put("cdSocio", sp.getSociopartidaPK().getCdSocio());
+				objPK.put("cdPartida", sp.getSociopartidaPK().getCdPartida());
+				obj.put("sociopartidaPK", objPK.toString());
+			    obj.put("cdTime", sp.getCdTime());
+				obj.put("nuGol", sp.getNuGol());
+				obj.put("nuGolcontra", sp.getNuGolcontra());
+				obj.put("flGoleiro", sp.getFlGoleiro());
+				obj.put("flCartaovermelho", sp.getFlCartaovermelho());
+				obj.put("flCartaoazul", sp.getFlCartaoazul());
+				obj.put("flCartaoamarelo", sp.getFlCartaoamarelo());
+				obj.put("flAtrazado", sp.getFlAtrazado());
+				arr.add(obj);
+			}
+			
+			request.setAttribute("rowjon", arr.toString());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

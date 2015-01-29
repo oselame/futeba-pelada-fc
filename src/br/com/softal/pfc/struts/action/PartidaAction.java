@@ -168,6 +168,7 @@ public class PartidaAction extends PfcAction {
 			Partida partida = new Partida();
 			partida.setDtPartida( Util.dataAtual() );
 			partida.setStatusInsert();
+			partida.setNuJogadorportime( 8 );
 			partidaForm.setEntidade( partida );
 			
 			Integer nuAno = Util.getAnoQuadrimestreAtual();
@@ -222,6 +223,9 @@ public class PartidaAction extends PfcAction {
 		}
 		PartidaDAO partidaDAO = DAOFactory.getPartidaDAO();
 		try {
+			if (partida.getNuJogadorportime() == null) {
+				partida.setNuJogadorportime( 8 );
+			}
 		    if (partida.isStatusInsert()) {
 		    	partidaDAO.insert( partida );
 		    	messages.add(Constantes.TIPO_MENSAGEM_SUCESSO, new ActionMessage("msg.sucesso.salvar.registro"));

@@ -25,6 +25,7 @@ public class Partida extends Entidade {
     private String deBolacheia;
     private String deObservacao;
     private Integer flConcluida;
+    private Integer nuJogadorportime;
     
     private Quadrimestre quadrimestre;
     private Timecamisa timecamisa1;
@@ -239,6 +240,14 @@ public class Partida extends Entidade {
 		this.deMes = deMes;
 	}
 	
+	public Integer getNuJogadorportime() {
+		return nuJogadorportime;
+	}
+
+	public void setNuJogadorportime(Integer nuJogadorportime) {
+		this.nuJogadorportime = nuJogadorportime;
+	}
+
 	@Override
 	public EntidadePK<Partida> getPK() {
 		return getPartidaPK();

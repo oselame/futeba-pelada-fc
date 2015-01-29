@@ -72,23 +72,23 @@
 	<html:hidden name="partidaForm" property="entidade.flConcluida" />
 	<html:hidden name="partidaForm" property="entidade.status" />
 	
-	<table width="100%" border="0" cellpadding="0" cellspacing="1">
+	<table width="100%" border="0" cellpadding="0" cellspacing="2">
 	<tag:espacador />
 	<tr>
 		<td width="120" align="right"><b>Ano:</b></td>
 		<td width="50%">
 			<tag:Text name="partidaForm" property="entidade.nuAno" style="width:80px" styleClass="disabled" readonly="true"/>
 		</td>
-		<td align="right" width="100"><b>Quadrimestre:</b> </td>
+		<td align="right" width="120"><b>Quadrimestre:</b> </td>
 		<td>
 			<tag:Text name="partidaForm" property="entidade.cdQuadrimestre" style="width:80px" styleClass="disabled" readonly="true"/>
 		</td>	
-	</tr>
-	<tr>	
 		<td width="120" align="right"><b>Partida:</b></td>
 		<td width="50%">
 			<tag:Text name="partidaForm" property="entidade.partidaPK.cdPartida" style="width:80px" styleClass="disabled" readonly="true"/>
 		</td>
+	</tr>
+	<tr>
 		<td width="120" align="right"><b>Data:</b></td>
 		<td>
 			<logic:equal name="partidaForm" property="entidade.flConcluida" value="0">
@@ -98,10 +98,14 @@
 				<tag:Date name="partidaForm" property="entidade.dtPartidaformatada" style="width:80px" styleClass="disabled" readonly="true"/>
 			</logic:notEqual>
 		</td>
+		<td colspan="3" align="right"><b>Participantes por time:</b></td>
+		<td>
+			<tag:Number name="partidaForm" formato="2" property="entidade.nuJogadorportime" style="width:80px" />
+		</td>
 	</tr>
 	<tr>
 		<td width="120" align="right"><b>Juiz:</b></td>
-		<td colspan="3">
+		<td colspan="5">
 			<tag:Text name="partidaForm" property="entidade.nmJuiz"/>
 		</td>
 	</tr>

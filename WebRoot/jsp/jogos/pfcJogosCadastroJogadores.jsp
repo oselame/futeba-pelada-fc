@@ -1,4 +1,4 @@
- <!-- pfcJogosCadastroJogadores.jsp -->
+<!-- pfcJogosCadastroJogadores.jsp -->
 <%@ include file="/pfcInclude.jsp"%>
 <%@taglib prefix="tag" tagdir="/WEB-INF/tags"%>
 <style>
@@ -10,7 +10,7 @@
 -->
 </style>
 <html:form action="/salvarCadSocioPartida.do" >
-
+	<html:hidden property="entidade.partida.nuJogadorportime" name="sociopartidaForm" styleId="nuJogadorportime" />
 	<p>
 		<a href="editarCadPartida.do?cdPartida=${sociopartidaForm.entidade.sociopartidaPK.cdPartida}">Cadastro de Jogos</a> 
 		| <strong>Jogadores</strong>
@@ -32,7 +32,7 @@
 		<td width="50%">
 			<bean:write name="sociopartidaForm" property="entidade.partida.nuAno"/>
 		</td>	
-		<td align="right" width="100"><b>Quadrimestre:</b> </td>
+		<td align="right" width="250"><b>Quadrimestre:</b> </td>
 		<td>
 			<bean:write name="sociopartidaForm" property="entidade.partida.cdQuadrimestre"/>
 		</td>
@@ -51,11 +51,11 @@
 	</tr>	
 	<tr>
 		<td  align="right">
-			<b>Placar</b>
+			<b>Placar:</b>
 		</td>
 		<td colspan="3">
 			${nmTimeA}&nbsp;${sociopartidaForm.entidade.partida.dePlacar}&nbsp;${nmTimeB}
-		</td>
+		</td>		
 	</tr>
 
 	</table>
@@ -74,6 +74,13 @@
 	<html:hidden name="sociopartidaForm" property="nuJogadores" styleId="nuJogadores" />
 	
 	<table width="100%" border="0" cellpadding="0" cellspacing="1" >
+	<tr>
+		<td align="right">Quantidade de Participantes por time:</td>
+		</td>
+		<td align="right">
+			<b>${sociopartidaForm.entidade.partida.nuJogadorportime}</b>
+		</td>
+	</tr>
 	<tr>
 		<td align="right">Participantes selecionados Time ${nmTimeA}:</td>
 		<td width="20"><html:text name="sociopartidaForm" 
@@ -274,6 +281,7 @@
 		}
 		
 		function somaJogadoresTimes(index) {
+			var nuJogadorportime = parseInt(document.getElementById("nuJogadorportime").value);
 			var oNuJogadores = document.sociopartidaForm["nuJogadores"].value;
 			var oNuJogadorTimeA = 0;
 			var oNuJogadorTimeB = 0;
@@ -288,16 +296,16 @@
 					oNuJogadorTimeB = oNuJogadorTimeB + 1;
 				}
 			}
-			if (oNuJogadorTimeA > 8) {				
+			if (oNuJogadorTimeA > nuJogadorportime) {				
 				var campo0 = "cdTime_" + index + "_0";
 				document.getElementById(campo0).checked = true;
-				oNuJogadorTimeA = 8;
+				oNuJogadorTimeA = nuJogadorportime;
 				alert("Não é possível selecionar mais jogadores para o time ''${nmTimeA}''!");
 			}
-			if (oNuJogadorTimeB > 8) {				
+			if (oNuJogadorTimeB > nuJogadorportime) {				
 				var campo0 = "cdTime_" + index + "_0";
 				document.getElementById(campo0).checked = true;
-				oNuJogadorTimeB = 8;
+				oNuJogadorTimeB = nuJogadorportime;
 				alert("Não é possível selecionar mais jogadores para o time ''${nmTimeB}''!");
 			}
 			document.getElementById("nuJogadorTimeA").value = oNuJogadorTimeA;
