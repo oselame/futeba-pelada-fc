@@ -1,5 +1,15 @@
 package br.com.softal.pfc.DAO.Impl;
 
+/*
+ 	
+ 	alter table epfcpartida add nuJogadorportime decimal(1,0);
+ 
+ 	update epfcpartida
+	set nuJogadorportime = 8
+	where nuJogadorportime is null
+	
+ */
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -209,8 +219,8 @@ public class RdbPartidaDAO implements PartidaDAO {
 			con = ServiceLocator.getConexao();
 			StringBuilder sql = new StringBuilder();
 			sql.append(" insert into epfcpartida (cdpartida, nuano, cdquadrimestre, cdtimeperdedor, cdtimevencedor, dtpartida, " +
-					"flempate, nugolvencedor, nugolperdedor, nmjuiz, debolamurcha, debolacheia, deobservacao, flconcluida)  ");
-			sql.append(" values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  ");
+					"flempate, nugolvencedor, nugolperdedor, nmjuiz, debolamurcha, debolacheia, deobservacao, flconcluida, nuJogadorportime)  ");
+			sql.append(" values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  ");
 			pstmt = con.prepareStatement( sql.toString() );
 			int posi = 1;
 			pstmt.setInt(posi++, partida.getPartidaPK().getCdPartida());
@@ -227,6 +237,7 @@ public class RdbPartidaDAO implements PartidaDAO {
 			pstmt.setString(posi++, partida.getDeBolacheia() );
 			pstmt.setString(posi++, partida.getDeObservacao() );
 			pstmt.setInt(posi++, partida.getFlConcluida() );
+			pstmt.setInt(posi++, partida.getNuJogadorportime() );
 			pstmt.executeUpdate();
 			//partida.getPartidaPK().setCdPartida( getCodigoGerado() );
 			log.debug("Registro inserido com sucesso na epfcpartida.");
@@ -281,7 +292,8 @@ public class RdbPartidaDAO implements PartidaDAO {
 			sql.append("    debolamurcha = ?, \n");
 			sql.append("    debolacheia = ?, \n");
 			sql.append("    deobservacao = ?, \n");
-			sql.append("    flconcluida = ? \n");
+			sql.append("    flconcluida = ?, \n");
+			sql.append("    nuJogadorportime = ? \n");
 			sql.append("where cdpartida = " + partida.getPartidaPK().getCdPartida());			
 			pstmt = con.prepareStatement( sql.toString() );
 			int posi = 1;
@@ -298,6 +310,7 @@ public class RdbPartidaDAO implements PartidaDAO {
 			pstmt.setString(posi++, partida.getDeBolacheia() );
 			pstmt.setString(posi++, partida.getDeObservacao() );
 			pstmt.setInt(posi++, partida.getFlConcluida() );
+			pstmt.setInt(posi++, partida.getNuJogadorportime() );
 			pstmt.executeUpdate();
 			log.debug("Registro atualizado com sucesso na epfcpartida.");
 		} catch (Exception e) {
@@ -356,6 +369,7 @@ public class RdbPartidaDAO implements PartidaDAO {
 		try { partida.setDeBolacheia( rs.getString("deBolacheia") ); } catch (Exception e) {}
 		try { partida.setDeObservacao( rs.getString("deObservacao") ); } catch (Exception e) {}
 		try { partida.setFlConcluida( rs.getInt("flConcluida") ); } catch (Exception e) {}
+		try { partida.setNuJogadorportime( rs.getInt("nuJogadorportime") ); } catch (Exception e) {}
 		return partida;
 	}
 
