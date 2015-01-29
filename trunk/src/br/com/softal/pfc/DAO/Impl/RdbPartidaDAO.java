@@ -2,11 +2,9 @@ package br.com.softal.pfc.DAO.Impl;
 
 /*
  	
- 	alter table epfcpartida add nuJogadorportime decimal(1,0);
+ 	alter table epfcpartida add nuJogadorportime decimal(2,0);
  
- 	update epfcpartida
-	set nuJogadorportime = 8
-	where nuJogadorportime is null
+ 	update epfcpartida set nuJogadorportime = 8 where nuJogadorportime is null;
 	
  */
 
