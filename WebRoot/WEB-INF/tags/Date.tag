@@ -9,6 +9,7 @@
 <%@attribute name="style"%>
 <%@attribute name="onfocus"%>
 <%@attribute name="onblurs"%>
+<%@attribute name="onchange"%>
 <%@attribute name="styleClass"%>
 <%@attribute name="readonly"%>
 <%@attribute name="styleId"%>
@@ -21,6 +22,7 @@
 	styleClass="pfcCampoTexto ${styleClass}" style="${style}"
 	onfocus="toggleColor(this); ${onfocus} "
 	onblur="return CD_BLR(this); toggleColor(this); ${onblurs}; "
+	onchange="${onchange}"
 	maxlength="10"
 	onkeypress="CD_KPS(this,event);"
 	readonly="${readonly}"	

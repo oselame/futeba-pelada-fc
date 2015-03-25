@@ -70,7 +70,7 @@
 				</td>
 				<td>
 					<tag:Date name="quadrimestreForm" property="quadrimestre1.dtFimstring" style="width:80px"
-						onfocus="atualizaInicioQuadrimestre4();"/>
+						onchange="atualizaInicioQuadrimestre2();" styleId="dtFimQuadrimestre1"/>
 				</td>
 			</tr>
 			</table>
@@ -85,13 +85,13 @@
 			<tr>
 				<td>
 					<tag:Date name="quadrimestreForm" property="quadrimestre2.dtIniciostring" style="width:80px"
-						onfocus="atualizaInicioQuadrimestre4();"/>
+						readonly="true" styleClass="disabled" styleId="dtInicioQuadrimestre2"/>
 				</td>
 				<td>&nbsp;até&nbsp;
 				</td>
 				<td>
 					<tag:Date name="quadrimestreForm" property="quadrimestre2.dtFimstring" style="width:80px"
-						onfocus="atualizaInicioQuadrimestre4();"/>
+						onchange="atualizaInicioQuadrimestre3();" styleId="dtFimQuadrimestre2"/>
 				</td>
 			</tr>
 			</table>
@@ -106,7 +106,7 @@
 			<tr>
 				<td>
 					<tag:Date name="quadrimestreForm" property="quadrimestre3.dtIniciostring" style="width:80px"
-						onfocus="atualizaInicioQuadrimestre4();"/>
+						readonly="true" styleClass="disabled" styleId="dtInicioQuadrimestre3"/>
 				</td>
 				<td>&nbsp;até&nbsp;
 				</td>
@@ -163,9 +163,32 @@
 	</logic:equal>		
 	<script>
 		function atualizaInicioQuadrimestre4() {
-			document.quadrimestreForm["quadrimestre4.dtIniciostring"].value = document.quadrimestreForm["quadrimestre1.dtIniciostring"].value
-			document.quadrimestreForm["quadrimestre4.dtFimstring"].value = document.quadrimestreForm["quadrimestre3.dtFimstring"].value
-			
+			document.quadrimestreForm["quadrimestre4.dtIniciostring"].value = document.quadrimestreForm["quadrimestre1.dtIniciostring"].value;
+			document.quadrimestreForm["quadrimestre4.dtFimstring"].value = document.quadrimestreForm["quadrimestre3.dtFimstring"].value;
+		}
+		
+		function atualizaInicioQuadrimestre2() {
+			var datastr = "";
+			if (document.getElementById("dtFimQuadrimestre1").value != "") {
+				var vdata = CD_getDataSplit(document.getElementById("dtFimQuadrimestre1").value);
+				var data = new Date(vdata[2], parseInt(vdata[1]) - 1, vdata[0], 0, 0, 0);
+				data.setDate(data.getDate() + 1);
+				
+				datastr = data.getDate() + "/" + (data.getMonth() + 1) + "/" + data.getFullYear();
+			}
+			document.getElementById("dtInicioQuadrimestre2").value = datastr;
+		}
+		
+		function atualizaInicioQuadrimestre3() {
+			var datastr = "";
+			if (document.getElementById("dtFimQuadrimestre2").value != "") {
+				var vdata = CD_getDataSplit(document.getElementById("dtFimQuadrimestre2").value);
+				var data = new Date(vdata[2], parseInt(vdata[1]) - 1, vdata[0], 0, 0, 0);
+				data.setDate(data.getDate() + 1);
+				
+				datastr = data.getDate() + "/" + (data.getMonth() + 1) + "/" + data.getFullYear();
+			}
+			document.getElementById("dtInicioQuadrimestre3").value = datastr;
 		}
 		
 		function verificaObrigatorios() {
